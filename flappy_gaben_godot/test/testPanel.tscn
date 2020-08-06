@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://test/testPanel.gd" type="Script" id=1]
+[ext_resource path="res://test/Label2.gd" type="Script" id=2]
+
+[node name="Panel" type="Panel"]
+margin_left = 560.0
+margin_top = 264.0
+margin_right = 1068.0
+margin_bottom = 640.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 160.0
+margin_right = 160.0
+margin_bottom = 209.0
+text = "My name is Label"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 98.0
+margin_bottom = 72.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 208.0
+margin_right = 177.0
+margin_bottom = 240.0
+text = "test button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
