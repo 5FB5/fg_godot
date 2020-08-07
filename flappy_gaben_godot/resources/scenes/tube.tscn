@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/sprites/spr_tubeDefault_0.png" type="Texture" id=1]
 [ext_resource path="res://resources/scenes/scripts/tube.gd" type="Script" id=2]
@@ -9,6 +9,9 @@ extents = Vector2( 48, 373.092 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50.34, 16 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 63.8994 )
+
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
@@ -16,7 +19,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-tubeSpeed = 10
+tubeSpeed = 525
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -37,6 +40,14 @@ shape = SubResource( 2 )
 position = Vector2( -0.470886, 107.912 )
 shape = SubResource( 2 )
 
+[node name="playerScoreCollision" type="RigidBody2D" parent="."]
+modulate = Color( 0.671875, 0.322815, 0.322815, 1 )
+self_modulate = Color( 0.698039, 0.0392157, 0.627451, 1 )
+position = Vector2( -0.0921173, 28.5596 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerScoreCollision"]
+shape = SubResource( 3 )
+
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 68.7181, -56.8017 )
+position = Vector2( 69.1003, -53.2557 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
