@@ -11,9 +11,11 @@ __meta__ = {
 }
 
 [node name="tube" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 1856, -1072 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.21
 autostart = true
 
 [node name="Sprite" type="Sprite" parent="."]

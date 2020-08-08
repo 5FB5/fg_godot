@@ -4,22 +4,21 @@
 [ext_resource path="res://resources/scenes/scripts/player.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 40.7922
+radius = 31.3568
 
 [node name="player" type="RigidBody2D"]
-mode = 2
-mass = 501.27
-gravity_scale = 2.0
+mass = 3.07
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-jumpForce = 400
-gravityForce = 1000
+jumpForce = 26000
+gravityForce = 1056
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.795455, 0.795455 )
 texture = ExtResource( 1 )
 
 [node name="playerCollision" type="CollisionShape2D" parent="."]
-position = Vector2( -1, -1 )
+position = Vector2( -0.757584, -0.860977 )
 shape = SubResource( 1 )
