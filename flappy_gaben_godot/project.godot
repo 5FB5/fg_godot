@@ -16,15 +16,20 @@ _global_script_class_icons={
 [application]
 
 config/name="flappy_gaben"
+run/main_scene="res://resources/scenes/main.tscn"
 config/icon="res://resources/icon.png"
+
+[autoload]
+
+PlayerVars="*res://resources/scenes/scripts/player.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
-window/size/test_width=1600
-window/size/test_height=900
+window/size/test_width=1280
+window/size/test_height=720
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -48,6 +53,16 @@ player_jump={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player_coll"
+2d_physics/layer_2="tube_coll"
+2d_physics/layer_3="tube_score_inc_coll"
+
+[logging]
+
+file_logging/enable_file_logging=true
 
 [physics]
 
