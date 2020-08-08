@@ -6,10 +6,11 @@ func _ready():
 func spawnTube():
 	var newTube = preload("res://resources/scenes/tube.tscn").instance()
 	add_child(newTube)
-	newTube.position = Vector2(2144, rand_range(255, 620))
+	newTube.position = Vector2(2144, rand_range(255, 590))
+	newTube.add_to_group("Tubes")
 	pass
 
 func _on_Timer_timeout():
 	spawnTube()
 	print ("Game: New tube spawned")
-	pass # Replace with function body.
+	pass
