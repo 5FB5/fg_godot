@@ -20,7 +20,7 @@ func death():
 	
 	if (position.y > screenSize.y): #When player's drop position more than screen size we hide him
 		self.hide()
-		print("Game: Player hided")
+		print("Game: Player hided")		
 	pass
 
 #Player jumping function
@@ -33,7 +33,7 @@ func jump(_delta):
 func _process(delta):
 	if (PlayerVars.canFly):
 			linear_velocity.y += gravityForce * delta
-		
+				
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)
 			

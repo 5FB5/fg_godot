@@ -16,8 +16,12 @@ func _on_VisibilityNotifier2D_screen_exited():
 #If coin trigger collides with player then we increase score
 func _on_Area2D_body_entered(body):
 	var playerVars = get_node("/root/PlayerVars")
+	
 	if (playerVars.canFly == true):	
-		print("Game: Player score +1")
+		var gameVars = get_node("/root/MainGameVars")
+		gameVars.playerScore = gameVars.playerScore + 1
+		
+		print("Game: Player score: ", gameVars.playerScore)
 	pass
 
 #If tube collides with player then we set player canFly var to false (defeat)
