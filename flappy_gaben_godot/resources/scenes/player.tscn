@@ -6,7 +6,10 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 31.3568
 
-[node name="player" type="RigidBody2D"]
+[node name="player" type="RigidBody2D" groups=[
+"player",
+]]
+collision_mask = 6
 mass = 3.07
 script = ExtResource( 2 )
 __meta__ = {
