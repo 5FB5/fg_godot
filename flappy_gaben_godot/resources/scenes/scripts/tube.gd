@@ -29,7 +29,7 @@ func _on_Area2D_body_entered(body):
 
 #If tube collides with player then we set player canFly var to false (defeat)
 func _on_RigidBody2D_body_entered(body):
-	var _globalVar  = get_node("/root/GlobalVar")
+	var _globalVar = get_node("/root/GlobalVar")
 	_globalVar.playerCanFly = false 
 	
 	print("Code: _globalVar.canFly = ", _globalVar.playerCanFly)

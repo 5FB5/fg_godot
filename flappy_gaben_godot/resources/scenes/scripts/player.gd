@@ -2,7 +2,7 @@ extends RigidBody2D
 
 signal _death
 
-export var jumpForce: 		int = 26000
+export var jumpForce: 	int = 26000
 export var gravityForce: 	int = 1056
 
 #Getting all global vars we need

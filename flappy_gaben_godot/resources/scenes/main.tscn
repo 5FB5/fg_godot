@@ -6,16 +6,20 @@
 [ext_resource path="res://resources/scenes/ui.tscn" type="PackedScene" id=4]
 
 [node name="MainScene" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
 position = Vector2( 184, 200 )
 can_sleep = false
 
 [node name="tubeSpawner" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( -40, 88 )
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
+pause_mode = 2
 
 [node name="UI" parent="ui_layer" instance=ExtResource( 4 )]
 margin_top = 64.0
