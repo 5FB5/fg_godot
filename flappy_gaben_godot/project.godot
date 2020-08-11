@@ -21,8 +21,9 @@ config/icon="res://resources/icon.png"
 
 [autoload]
 
-PlayerVars="*res://resources/scenes/scripts/player.gd"
-MainGameVars="*res://resources/scenes/scripts/main.gd"
+MainGameVars="*res://resources/scenes/scripts/mainScene.gd"
+GlobalVar="*res://resources/scenes/scripts/global_var.gd"
+Debug="*res://resources/scenes/scripts/debug.gd"
 
 [display]
 
@@ -61,6 +62,10 @@ player_jump={
 2d_physics/layer_2="tube_coll"
 2d_physics/layer_3="tube_score_inc_coll"
 
+[locale]
+
+locale_filter=[ 1, [ "en", "ru" ] ]
+
 [logging]
 
 file_logging/enable_file_logging=true
@@ -71,5 +76,8 @@ file_logging/enable_file_logging=true
 
 [rendering]
 
+quality/driver/fallback_to_gles2=true
 threads/thread_model=2
+quality/subsurface_scattering/quality=0
+quality/subsurface_scattering/weight_samples=false
 environment/default_environment="res://resources/default_env.tres"

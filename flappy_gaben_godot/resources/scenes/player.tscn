@@ -15,8 +15,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-jumpForce = 26000
-gravityForce = 1056
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.795455, 0.795455 )

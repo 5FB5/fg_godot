@@ -2,24 +2,25 @@ extends RigidBody2D
 
 signal _death
 
-export var jumpForce = 50
-export var gravityForce = 10
+export var jumpForce: 		int = 26000
+export var gravityForce: 	int = 1056
 
-var canFly
+#Getting all global vars we need
+onready var _globalVars = get_node("/root/GlobalVar")
+
 var screenSize
 
 #Signal for death function for once activation
 func _on_player__death():
 	self.hide()
-	print("Game: Player hided")
+	print("Code: Player.hide()")
 	pass
 
 #Basic settings for player
 func _ready():
-	var playerVars = get_node("/root/PlayerVars")
 	screenSize = get_viewport_rect().size
 	
-	playerVars.canFly = true
+	print("Code: Player spawned")
 	pass
 
 #Death function if player collides with tube	
@@ -32,21 +33,22 @@ func death():
 
 #Player jumping function
 func jump(_delta):
-	if (PlayerVars.canFly):
+	if (_globalVars.playerCanFly):
 		linear_velocity.y -= jumpForce * _delta
 	pass
 
 #Main function
 func _process(delta):
-	if (PlayerVars.canFly):
-			linear_velocity.y += gravityForce * delta
+	if (_globalVars.playerCanFly):
+			linear_velocity.y += gravityForce * delta #Player's droping
 				
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)
 			
-			if (position.y > screenSize.y): #When player's drop position more than screen size we hide him
+			if ((position.y > screenSize.y) || (position.y < screenSize.y - 1128)): #When player's drop position more than screen size we hide him
 				emit_signal("_death")
 				
 	else: #defeat things if canFly is false
 		death()
 	pass
+
