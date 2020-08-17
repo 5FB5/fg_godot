@@ -8,8 +8,6 @@ export var gravityForce: 	int = 1056
 #Getting all global vars we need
 onready var _globalVars = get_node("/root/GlobalVar")
 
-var screenSize
-
 #Signal for death function for once activation
 func _on_player__death():
 	self.hide()
@@ -18,8 +16,6 @@ func _on_player__death():
 
 #Basic settings for player
 func _ready():
-	screenSize = get_viewport_rect().size
-	
 	print("Code: Player spawned")
 	pass
 
@@ -27,7 +23,7 @@ func _ready():
 func death_tubeCollision():
 	linear_velocity.y += 50
 	
-	if (position.y > screenSize.y): #When player's drop position more than screen size we hide him
+	if (position.y > _globalVars.screenSize.y + 600): #When player's drop position more than screen size we hide him
 		emit_signal("_death")
 	pass
 
@@ -46,7 +42,7 @@ func _process(delta):
 				jump(delta)
 			
 			 #When player's drop position more than screen size in game loop we hide him
-			if ((position.y > screenSize.y) || (position.y < screenSize.y - 1128)):
+			if ((position.y > _globalVars.screenSize.y + 600) || (position.y < _globalVars.screenSize.y - 750)):
 				emit_signal("_death")
 				
 	else: #Main death function if canFly is false

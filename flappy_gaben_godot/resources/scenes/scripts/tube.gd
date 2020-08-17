@@ -21,10 +21,9 @@ func _on_Area2D_body_entered(body):
 	var playerVars = get_node("/root/PlayerVars")
 	
 	if (_globalVar.playerCanFly == true):	
-		var gameVars = get_node("/root/MainGameVars")
-		gameVars.playerScore = gameVars.playerScore + 1
+		_globalVar.playerScore = _globalVar.playerScore + 1
 		
-		print("Game: Player score: ", gameVars.playerScore)
+		print("Game: Player score: ", _globalVar.playerScore)
 	pass
 
 #If tube collides with player then we set player canFly var to false (defeat)
