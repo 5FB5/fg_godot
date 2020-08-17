@@ -24,7 +24,7 @@ func _ready():
 	pass
 
 #Death function if player collides with tube	
-func death():
+func death_tubeCollision():
 	linear_velocity.y += 50
 	
 	if (position.y > screenSize.y): #When player's drop position more than screen size we hide him
@@ -45,10 +45,11 @@ func _process(delta):
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)
 			
-			if ((position.y > screenSize.y) || (position.y < screenSize.y - 1128)): #When player's drop position more than screen size we hide him
+			 #When player's drop position more than screen size in game loop we hide him
+			if ((position.y > screenSize.y) || (position.y < screenSize.y - 1128)):
 				emit_signal("_death")
 				
-	else: #defeat things if canFly is false
-		death()
+	else: #Main death function if canFly is false
+		death_tubeCollision()
 	pass
 

@@ -3,5 +3,5 @@
 [ext_resource path="res://resources/fonts/src/TF2secondary.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 60
+size = 104
 font_data = ExtResource( 1 )
