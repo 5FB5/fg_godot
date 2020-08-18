@@ -8,15 +8,40 @@ export var gravityForce: 	int = 1056
 #Getting all global vars we need
 onready var _globalVars = get_node("/root/GlobalVar")
 
-#Signal for death function for once activation
-func _on_player__death():
-	self.hide()
-	print("Code: Player.hide()")
+#Saving best score in file
+func saveBestScore(_value):
+	var fileBestScoreSave = File.new()
+	
+	fileBestScoreSave.open("user://best_score.dat", File.WRITE)
+	fileBestScoreSave.store_32(int(_value))
+	fileBestScoreSave.close()
+	
+	print("Code: saveBestScore() activated")
 	pass
 
-#Basic settings for player
-func _ready():
-	print("Code: Player spawned")
+#Loading current best score from file
+func loadBestScore():
+	var fileBestScoreLoad = File.new()
+	
+	fileBestScoreLoad.open("user://best_score.dat", File.READ)
+	_globalVars.playerBestScore = fileBestScoreLoad.get_32()
+	fileBestScoreLoad.close()
+	
+	print("Code: loadBestScore() activated")
+	pass
+
+#Signal for death function for once activation
+func _on_player__death():
+	print("-- Player Death --")
+	#If player's current score is more than best score we have
+	if (_globalVars.playerScore > _globalVars.playerBestScore):
+		_globalVars.playerBestScore = _globalVars.playerScore
+		saveBestScore(_globalVars.playerBestScore) #Save progress
+	
+	self.hide()
+	print("Code: Player.hide()")
+	print("Game: Best score = ", _globalVars.playerBestScore, ". Game over!")
+	print("-- END Player Death --")
 	pass
 
 #Death function if player collides with tube	
@@ -31,6 +56,13 @@ func death_tubeCollision():
 func jump(_delta):
 	if (_globalVars.playerCanFly):
 		linear_velocity.y -= jumpForce * _delta
+	pass
+
+#Basic settings for player
+func _ready():
+	#Load best score from file on start
+	loadBestScore()
+	print("Code: Player spawned")
 	pass
 
 #Main function
