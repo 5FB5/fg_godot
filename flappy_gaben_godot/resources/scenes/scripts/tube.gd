@@ -23,7 +23,7 @@ func _on_Area2D_body_entered(body):
 	if (_globalVar.playerCanFly == true):	
 		_globalVar.playerScore = _globalVar.playerScore + 1
 		
-		print("Game: Player score: ", _globalVar.playerScore)
+		print("Game: Player score = ", _globalVar.playerScore)
 	pass
 
 #If tube collides with player then we set player canFly var to false (defeat)
