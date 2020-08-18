@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/scenes/scripts/ui.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/fg_score.tres" type="DynamicFont" id=2]
 [ext_resource path="res://resources/scenes/scripts/score_label.gd" type="Script" id=3]
 [ext_resource path="res://resources/scenes/ui_pause.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/scenes/ui_gameover.tscn" type="PackedScene" id=5]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
@@ -36,3 +37,5 @@ __meta__ = {
 
 [node name="Pause" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="Game Over" parent="." instance=ExtResource( 5 )]

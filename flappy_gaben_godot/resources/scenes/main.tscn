@@ -24,5 +24,5 @@ pause_mode = 2
 [node name="UI" parent="ui_layer" instance=ExtResource( 4 )]
 size_flags_horizontal = 1
 size_flags_vertical = 1
-[connection signal="_death" from="player" to="player" method="_on_player__death" flags=6]
 [connection signal="_death" from="player" to="." method="_on_player__death" flags=6]
+[connection signal="_death" from="player" to="player" method="_on_player__death" flags=6]
