@@ -23,7 +23,7 @@ __meta__ = {
 [node name="Text" type="MarginContainer" parent="."]
 anchor_bottom = 1.0
 margin_left = 70.0
-margin_right = 655.0
+margin_right = 725.0
 margin_bottom = -139.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -43,3 +43,61 @@ margin_bottom = 527.0
 custom_fonts/font = ExtResource( 1 )
 text = "Flappy Gaben"
 align = 1
+
+[node name="buttons" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -468.0
+margin_right = 772.0
+margin_bottom = -60.9996
+custom_constants/margin_right = 188
+custom_constants/margin_top = -250
+custom_constants/margin_left = 170
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
+margin_left = 170.0
+margin_top = -250.0
+margin_right = 584.0
+margin_bottom = 407.0
+grow_horizontal = 0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Button2" type="Button" parent="buttons/VBoxContainer"]
+pause_mode = 2
+margin_top = 210.0
+margin_right = 414.0
+margin_bottom = 262.373
+rect_min_size = Vector2( 413.93, 52.373 )
+rect_pivot_offset = Vector2( -738.523, -649.163 )
+text = "TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="buttons/VBoxContainer"]
+pause_mode = 2
+margin_top = 302.0
+margin_right = 414.0
+margin_bottom = 354.373
+rect_min_size = Vector2( 413.93, 52.373 )
+rect_pivot_offset = Vector2( -738.523, -649.163 )
+text = "TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="buttons/VBoxContainer"]
+pause_mode = 2
+margin_top = 394.0
+margin_right = 414.0
+margin_bottom = 446.373
+rect_min_size = Vector2( 413.93, 52.373 )
+rect_pivot_offset = Vector2( -738.523, -649.163 )
+text = "TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}

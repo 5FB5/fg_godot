@@ -7,6 +7,7 @@
 [ext_resource path="res://resources/scenes/ui_gameover.tscn" type="PackedScene" id=5]
 
 [node name="UI" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 5
@@ -39,3 +40,4 @@ __meta__ = {
 visible = false
 
 [node name="Game Over" parent="." instance=ExtResource( 5 )]
+visible = false
