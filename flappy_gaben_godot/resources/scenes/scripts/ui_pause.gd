@@ -15,3 +15,9 @@ func _input(event):
 			else:
 				print("Game: Resumed")
 	pass
+
+
+func _on_Button2_pressed():
+	get_tree().paused = not get_tree().paused
+	visible = not visible
+	pass 

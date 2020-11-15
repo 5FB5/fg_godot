@@ -63,7 +63,10 @@ func jump(_delta):
 
 #Basic settings for player
 func _ready():
-	#Load best score from file on start
+	# Set basic position
+	position = Vector2(184, 200)
+	
+	# Load best score from file on start
 	loadBestScore()
 	print("Code: Player spawned")
 	pass
@@ -75,6 +78,9 @@ func _process(delta):
 				
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)
+			
+			if (Input.is_action_pressed("game_pause")):
+				linear_velocity.y = 0
 			
 			 #When player's drop position more than screen size in game loop we hide him
 			if ((position.y > _globalVars.screenSize.y + 600) || (position.y < _globalVars.screenSize.y - 750)):
