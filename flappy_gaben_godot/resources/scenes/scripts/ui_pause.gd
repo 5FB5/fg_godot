@@ -11,6 +11,7 @@ func _input(event):
 		
 			if (visible):
 				print("Game: Paused")
+				$buttons/VBoxContainer/Button2.grab_focus()
 			else:
 				print("Game: Resumed")
 	pass

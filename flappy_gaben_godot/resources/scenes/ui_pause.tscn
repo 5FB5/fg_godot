@@ -73,7 +73,7 @@ margin_right = 414.0
 margin_bottom = 262.373
 rect_min_size = Vector2( 413.93, 52.373 )
 rect_pivot_offset = Vector2( -738.523, -649.163 )
-text = "TEST"
+text = "RESUME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -85,7 +85,7 @@ margin_right = 414.0
 margin_bottom = 354.373
 rect_min_size = Vector2( 413.93, 52.373 )
 rect_pivot_offset = Vector2( -738.523, -649.163 )
-text = "TEST"
+text = "SETTINGS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,7 +97,7 @@ margin_right = 414.0
 margin_bottom = 446.373
 rect_min_size = Vector2( 413.93, 52.373 )
 rect_pivot_offset = Vector2( -738.523, -649.163 )
-text = "TEST"
+text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": false
 }

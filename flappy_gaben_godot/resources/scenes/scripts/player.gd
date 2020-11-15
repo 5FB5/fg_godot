@@ -33,6 +33,9 @@ func loadBestScore():
 #Signal for death function for once activation
 func _on_player__death():
 	print("-- Player Death --")
+	_globalVars.playerCanFly = false
+	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
+	
 	#If player's current score is more than best score we have
 	if (_globalVars.playerScore > _globalVars.playerBestScore):
 		_globalVars.playerBestScore = _globalVars.playerScore
@@ -67,7 +70,7 @@ func _ready():
 
 #Main function
 func _process(delta):
-	if (_globalVars.playerCanFly):
+	if (_globalVars.playerCanFly == true):
 			linear_velocity.y += gravityForce * delta #Player's droping
 				
 			if (Input.is_action_just_pressed("player_jump")):
