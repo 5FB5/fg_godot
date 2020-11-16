@@ -1,23 +1,82 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
 
 [node name="menuRoot" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="VBoxContainer" parent="."]
-margin_left = 120.0
-margin_top = 120.0
-margin_right = 1800.0
-margin_bottom = 1000.0
-
-[node name="Label" type="Label" parent="Title"]
-margin_right = 1680.0
-margin_bottom = 113.0
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -327.5
+margin_top = 70.0
+margin_right = 327.5
+margin_bottom = 183.0
 custom_fonts/font = ExtResource( 1 )
 text = "Flappy Gaben"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -206.5
+margin_top = 100.0
+margin_right = 206.5
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
+margin_right = 413.0
+margin_bottom = 1080.0
+custom_constants/separation = 93
+alignment = 1
+
+[node name="button_start" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 441.0
+margin_right = 413.0
+margin_bottom = 493.0
+rect_min_size = Vector2( 413, 52 )
+text = "START"
+
+[node name="button_quit" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 586.0
+margin_right = 413.0
+margin_bottom = 638.0
+rect_min_size = Vector2( 413, 52 )
+text = "QUIT"
+
+[node name="checkboxes" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -79.9999
+margin_right = 114.0
+margin_bottom = -40.0
+rect_scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="checkboxes"]
+margin_right = 94.0
+margin_bottom = 39.0
+
+[node name="checkbox_fullscreen" type="CheckBox" parent="checkboxes/VBoxContainer"]
+margin_right = 94.0
+margin_bottom = 24.0
+pressed = true
+text = "Fullscreen"
+[connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
+[connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]

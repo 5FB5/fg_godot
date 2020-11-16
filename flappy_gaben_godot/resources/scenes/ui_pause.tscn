@@ -66,11 +66,11 @@ grow_horizontal = 0
 custom_constants/separation = 40
 alignment = 1
 
-[node name="Button2" type="Button" parent="buttons/VBoxContainer"]
+[node name="button_resume" type="Button" parent="buttons/VBoxContainer"]
 pause_mode = 2
-margin_top = 210.0
+margin_top = 256.0
 margin_right = 414.0
-margin_bottom = 262.373
+margin_bottom = 308.373
 rect_min_size = Vector2( 413.93, 52.373 )
 rect_pivot_offset = Vector2( -738.523, -649.163 )
 text = "RESUME"
@@ -78,27 +78,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button3" type="Button" parent="buttons/VBoxContainer"]
+[node name="button_menu" type="Button" parent="buttons/VBoxContainer"]
 pause_mode = 2
-margin_top = 302.0
+margin_top = 348.0
 margin_right = 414.0
-margin_bottom = 354.373
-rect_min_size = Vector2( 413.93, 52.373 )
-rect_pivot_offset = Vector2( -738.523, -649.163 )
-text = "SETTINGS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button4" type="Button" parent="buttons/VBoxContainer"]
-pause_mode = 2
-margin_top = 394.0
-margin_right = 414.0
-margin_bottom = 446.373
+margin_bottom = 400.373
 rect_min_size = Vector2( 413.93, 52.373 )
 rect_pivot_offset = Vector2( -738.523, -649.163 )
 text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="buttons/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/button_resume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_pressed" flags=6]

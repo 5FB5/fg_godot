@@ -21,9 +21,12 @@ __meta__ = {
 }
 
 [node name="labelStatic" type="Label" parent="."]
-margin_left = 639.0
-margin_right = 1281.0
-margin_bottom = 227.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -321.0
+margin_top = 17.137
+margin_right = 321.0
+margin_bottom = 247.766
 custom_fonts/font = ExtResource( 2 )
 text = "Game Over!
 Best Score:"
@@ -37,9 +40,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -321.0
-margin_top = 230.0
+margin_top = 250.0
 margin_right = 321.0
-margin_bottom = 486.0
+margin_bottom = 506.0
 custom_fonts/font = ExtResource( 3 )
 text = "0"
 align = 1
@@ -80,3 +83,5 @@ margin_right = 413.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 413, 52 )
 text = "MENU"
+[connection signal="pressed" from="buttons/VBoxContainer/button_restart" to="." method="_on_button_restart_pressed" flags=6]
+[connection signal="pressed" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_pressed" flags=6]
