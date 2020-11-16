@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/scenes/scripts/ui_gameover.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/debug_text.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/fonts/fg_score.tres" type="DynamicFont" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,19 +20,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -270.5
-margin_top = -101.0
-margin_right = 270.5
-margin_bottom = 101.0
+[node name="labelStatic" type="Label" parent="."]
+margin_left = 639.0
+margin_right = 1281.0
+margin_bottom = 227.0
 custom_fonts/font = ExtResource( 2 )
-text = "FUCK YOU"
+text = "Game Over!
+Best Score:"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="labelScore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -321.0
+margin_top = 230.0
+margin_right = 321.0
+margin_bottom = 486.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.5
+margin_top = 10.0
+margin_right = 206.5
+margin_bottom = 539.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
+margin_right = 413.0
+margin_bottom = 529.0
+custom_constants/separation = 49
+alignment = 1
+
+[node name="button_restart" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 188.0
+margin_right = 413.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 413, 52 )
+text = "RESTART"
+
+[node name="button_menu" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 289.0
+margin_right = 413.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 413, 52 )
+text = "MENU"

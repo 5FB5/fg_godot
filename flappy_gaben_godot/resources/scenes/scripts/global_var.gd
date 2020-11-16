@@ -19,6 +19,17 @@ func _input(event):
 			
 	pass
 
+func loadBestScore():
+	var fileBestScoreLoad = File.new()
+	
+	fileBestScoreLoad.open("user://best_score.dat", File.READ)
+	playerBestScore = fileBestScoreLoad.get_32()
+	fileBestScoreLoad.close()
+	
+	print("Code: loadBestScore() activated")
+	pass
+
 func _ready():
+	loadBestScore()
 	screenSize = get_viewport().size #Get screen size as global var
 	pass

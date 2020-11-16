@@ -7,7 +7,7 @@ export var jumpForce: 	int = 26000
 export var gravityForce: 	int = 1056
 
 #Getting all global vars we need
-onready var _globalVars = get_node("/root/GlobalVar")
+onready var _globalVars = get_node_or_null("/root/GlobalVar")
 
 #Saving best score in file
 func saveBestScore(_value):
@@ -49,7 +49,8 @@ func _on_player__death():
 	pass
 
 func _on_player__death_ceiling():
-	print("-- Player Death --")
+	print("-- Player Death (ceiling) --")
+	
 	_globalVars.playerCanFly = false
 	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
 	
@@ -62,7 +63,6 @@ func _on_player__death_ceiling():
 		self.hide()
 		
 	print("Code: Player.hide()")
-	print("Game: Best score = ", _globalVars.playerBestScore, ". Game over!")
 	print("-- END Player Death --")
 	pass
 
@@ -90,9 +90,7 @@ func jump(_delta):
 func _ready():
 	# Set basic position
 	position = Vector2(184, 200)
-	
-	# Load best score from file on start
-	loadBestScore()
+
 	print("Code: Player spawned")
 	pass
 
