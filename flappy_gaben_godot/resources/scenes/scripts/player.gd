@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 signal _death
+signal _death_ceiling
 
 export var jumpForce: 	int = 26000
 export var gravityForce: 	int = 1056
@@ -47,12 +48,36 @@ func _on_player__death():
 	print("-- END Player Death --")
 	pass
 
+func _on_player__death_ceiling():
+	print("-- Player Death --")
+	_globalVars.playerCanFly = false
+	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
+	
+	#If player's current score is more than best score we have
+	if (_globalVars.playerScore > _globalVars.playerBestScore):
+		_globalVars.playerBestScore = _globalVars.playerScore
+		saveBestScore(_globalVars.playerBestScore) #Save progress
+	
+	if ((position.y > _globalVars.screenSize.y + 600)):
+		self.hide()
+		
+	print("Code: Player.hide()")
+	print("Game: Best score = ", _globalVars.playerBestScore, ". Game over!")
+	print("-- END Player Death --")
+	pass
+
 #Death function if player collides with tube	
 func death_tubeCollision():
 	linear_velocity.y += 50
 	
 	if (position.y > _globalVars.screenSize.y + 600): #When player's drop position more than screen size we hide him
 		emit_signal("_death")
+	pass
+
+#Death function if player collides with tube	
+func death_ceilingCollision():
+	emit_signal("_death_ceiling")
+	linear_velocity.y += 50
 	pass
 
 #Player jumping function
@@ -83,10 +108,11 @@ func _process(delta):
 				linear_velocity.y = 0
 			
 			 #When player's drop position more than screen size in game loop we hide him
-			if ((position.y > _globalVars.screenSize.y + 600) || (position.y < _globalVars.screenSize.y - 750)):
+			if ((position.y > _globalVars.screenSize.y + 600)):
 				emit_signal("_death")
+			elif (position.y < _globalVars.screenSize.y - 780):
+				death_ceilingCollision()
 				
 	else: #Main death function if canFly is false
 		death_tubeCollision()
 	pass
-

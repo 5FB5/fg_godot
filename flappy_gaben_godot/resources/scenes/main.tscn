@@ -9,7 +9,9 @@
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="player" parent="." instance=ExtResource( 1 )]
+[node name="player" type="CanvasLayer" parent="."]
+
+[node name="player" parent="player" instance=ExtResource( 1 )]
 pause_mode = 1
 position = Vector2( 184, 200 )
 can_sleep = false
@@ -26,5 +28,7 @@ layer = 2
 [node name="UI" parent="ui_layer" instance=ExtResource( 4 )]
 size_flags_horizontal = 1
 size_flags_vertical = 1
-[connection signal="_death" from="player" to="player" method="_on_player__death" flags=6]
-[connection signal="_death" from="player" to="." method="_on_player__death" flags=6]
+[connection signal="_death" from="player/player" to="player/player" method="_on_player__death" flags=6]
+[connection signal="_death" from="player/player" to="." method="_on_player__death" flags=6]
+[connection signal="_death_ceiling" from="player/player" to="player/player" method="_on_player__death_ceiling" flags=6]
+[connection signal="_death_ceiling" from="player/player" to="." method="_on_player__death_ceiling" flags=6]
