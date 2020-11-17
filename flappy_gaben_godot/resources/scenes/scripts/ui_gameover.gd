@@ -28,5 +28,6 @@ func _on_button_menu_pressed():
 	pass
 
 func _process(delta):
-	$labelScore.text = str(get_node("/root/GlobalVar").playerBestScore)
+	$ui_score/best_score/labelScore.text = str(get_node("/root/GlobalVar").playerBestScore)
+	$ui_score/current_score/labelCurrentScore.text = str(get_node("/root/GlobalVar").playerScore)
 	pass
