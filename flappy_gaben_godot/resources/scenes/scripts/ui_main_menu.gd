@@ -21,5 +21,9 @@ func _on_button_quit_pressed():
 func _ready():
 	if (get_tree().paused):
 		get_tree().paused = false
-		get_node("/root/GlobalVar").playerCanFly = true
+		get_node("/root/GlobalVar").playerCanFly = true		
+	pass
+
+func _on_button_fullscreen_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen
 	pass

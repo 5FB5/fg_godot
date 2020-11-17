@@ -58,12 +58,10 @@ rect_min_size = Vector2( 413, 52 )
 text = "QUIT"
 
 [node name="checkboxes" type="MarginContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -79.9999
-margin_right = 114.0
-margin_bottom = -40.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 124.0
+margin_bottom = 69.9999
 rect_scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -73,10 +71,11 @@ __meta__ = {
 margin_right = 94.0
 margin_bottom = 39.0
 
-[node name="checkbox_fullscreen" type="CheckBox" parent="checkboxes/VBoxContainer"]
+[node name="button_fullscreen" type="Button" parent="checkboxes/VBoxContainer"]
 margin_right = 94.0
-margin_bottom = 24.0
-pressed = true
+margin_bottom = 30.0
+rect_min_size = Vector2( 70, 30 )
 text = "Fullscreen"
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
+[connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]
