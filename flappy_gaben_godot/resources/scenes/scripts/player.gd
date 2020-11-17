@@ -91,7 +91,7 @@ func _process(delta):
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)
 			
-			if (Input.is_action_pressed("game_pause")):
+			if (Input.is_action_just_pressed("game_pause")):
 				linear_velocity.y = 0
 			
 			 #When player's drop position more than screen size in game loop we hide him

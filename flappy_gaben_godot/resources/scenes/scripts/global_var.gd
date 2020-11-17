@@ -9,6 +9,7 @@ var playerScore: int = 0
 var playerBestScore: int = 0
 
 func _input(event):
+	# XOne or PS4
 	if (Input.get_joy_name(0)):
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	else:
