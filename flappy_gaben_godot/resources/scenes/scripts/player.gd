@@ -20,17 +20,6 @@ func saveBestScore(_value):
 	print("Code: saveBestScore() activated")
 	pass
 
-#Loading current best score from file
-func loadBestScore():
-	var fileBestScoreLoad = File.new()
-	
-	fileBestScoreLoad.open("user://best_score.dat", File.READ)
-	_globalVars.playerBestScore = fileBestScoreLoad.get_32()
-	fileBestScoreLoad.close()
-	
-	print("Code: loadBestScore() activated")
-	pass
-
 #Signal for death function for once activation
 func _on_player__death():
 	print("-- Player Death --")

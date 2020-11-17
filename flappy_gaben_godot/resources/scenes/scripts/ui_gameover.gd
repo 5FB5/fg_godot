@@ -26,3 +26,7 @@ func _on_button_menu_pressed():
 	visible = false
 	get_tree().change_scene("res://resources/scenes/main_menu.tscn")
 	pass
+
+func _process(delta):
+	$labelScore.text = str(get_node("/root/GlobalVar").playerBestScore)
+	pass
