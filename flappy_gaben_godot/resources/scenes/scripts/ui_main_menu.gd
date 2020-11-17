@@ -33,13 +33,13 @@ func _process(delta):
 	# If XOne controller
 	if (Input.get_joy_name(0)):
 		if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
-			$xbox_buttons.visible = true
+			$gamepad_buttons/xbox.visible = true
 		# If PS4 controller
 	#	elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
 	
 	# If gamepad isn't connected
 	else:
 		# Hide all gamepad's icons
-		$xbox_buttons.visible = false	
+		$gamepad_buttons.visible = false
 	
 	pass

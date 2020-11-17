@@ -32,10 +32,14 @@ func _process(delta):
 		
 		# Change UI button icons
 		# If XOne controller
-	#	if (Input.get_joy_name(0)):
-	#		if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
-	#			print("")
+		if (Input.get_joy_name(0)):
+			if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
+				$gamepad_buttons/xbox.visible = true
 			# If PS4 controller
-	#		elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
-	#			print("")
+		#	elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
+	
+		# If gamepad isn't connected
+		else:
+			# Hide all gamepad's icons
+			$gamepad_buttons.visible = false
 	pass

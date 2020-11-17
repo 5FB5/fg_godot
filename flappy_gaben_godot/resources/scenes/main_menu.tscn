@@ -80,34 +80,38 @@ margin_bottom = 30.0
 rect_min_size = Vector2( 70, 30 )
 text = "Fullscreen"
 
-[node name="xbox_buttons" type="Control" parent="."]
-visible = false
+[node name="gamepad_buttons" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fullscreen_gamepad" type="Control" parent="xbox_buttons"]
+[node name="xbox" type="Control" parent="gamepad_buttons"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="fullscreen_gamepad" type="Control" parent="gamepad_buttons/xbox"]
 margin_right = 101.0
 margin_bottom = 106.0
 
-[node name="gamepad_buttonX" type="Sprite" parent="xbox_buttons/fullscreen_gamepad"]
+[node name="xbox_buttonX" type="Sprite" parent="gamepad_buttons/xbox/fullscreen_gamepad"]
 position = Vector2( 220, 50.454 )
 texture = ExtResource( 5 )
 
-[node name="menu_gamepad" type="Control" parent="xbox_buttons"]
+[node name="menu_gamepad" type="Control" parent="gamepad_buttons/xbox"]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -59.9999
-margin_right = -59.9999
+margin_left = 880.0
+margin_right = 880.0
 
-[node name="gamepad_buttonA" type="Sprite" parent="xbox_buttons/menu_gamepad"]
+[node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox/menu_gamepad"]
 position = Vector2( 261.924, 564.83 )
 texture = ExtResource( 3 )
 
-[node name="gamepad_buttonB" type="Sprite" parent="xbox_buttons/menu_gamepad"]
+[node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox/menu_gamepad"]
 position = Vector2( 262.924, 710 )
 texture = ExtResource( 4 )
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]

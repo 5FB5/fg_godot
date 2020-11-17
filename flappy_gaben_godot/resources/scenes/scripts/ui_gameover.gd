@@ -30,4 +30,18 @@ func _on_button_menu_pressed():
 func _process(delta):
 	$ui_score/best_score/labelScore.text = str(get_node("/root/GlobalVar").playerBestScore)
 	$ui_score/current_score/labelCurrentScore.text = str(get_node("/root/GlobalVar").playerScore)
+	
+	# Change UI button icons
+	# If XOne controller
+	if (Input.get_joy_name(0)):
+		if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
+			$gamepad_buttons/xbox.visible = true
+		# If PS4 controller
+	#	elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
+	
+	# If gamepad isn't connected
+	else:
+		# Hide all gamepad's icons
+		$gamepad_buttons.visible = false
+	
 	pass

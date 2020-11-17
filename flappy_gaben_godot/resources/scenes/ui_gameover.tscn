@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/scenes/scripts/ui_gameover.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/debug_text.tres" type="DynamicFont" id=2]
 [ext_resource path="res://resources/fonts/fg_score.tres" type="DynamicFont" id=3]
+[ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonB.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonA.png" type="Texture" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -119,15 +121,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="gamepad_buttons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xbox" type="Control" parent="gamepad_buttons"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+
+[node name="restart_gamepad" type="Control" parent="gamepad_buttons/xbox"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox/restart_gamepad"]
+position = Vector2( 271.67, 760 )
+texture = ExtResource( 5 )
+
+[node name="menu_gamepad" type="Control" parent="gamepad_buttons/xbox"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox/menu_gamepad"]
+position = Vector2( 271.636, 866.541 )
+texture = ExtResource( 4 )
+
 [node name="buttons" type="MarginContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 margin_left = -206.5
-margin_top = 10.0
+margin_top = -529.0
 margin_right = 206.5
-margin_bottom = 539.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
