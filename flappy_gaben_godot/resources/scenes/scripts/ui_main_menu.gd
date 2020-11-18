@@ -28,21 +28,20 @@ func _ready():
 		get_node("/root/GlobalVar").playerScore = 0
 	pass
 
-func _process(delta):
+func _process(_delta):
 	# Change UI button icons
 	# If XOne controller
 	if (Input.get_joy_name(0)):
 		if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
 			$gamepad_buttons/xbox.visible = true
-			$gamepad_buttons/ps4.visible = false
+
 		# If PS4 controller
 		elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
 			$gamepad_buttons/ps4.visible = true
-			$gamepad_buttons/xbox.visible = false
 	
 	# If gamepad isn't connected
 	else:
 		# Hide all gamepad's icons
-		$gamepad_buttons.visible = false
-	
+		$gamepad_buttons/xbox.visible = false
+		$gamepad_buttons/ps4.visible = false	
 	pass

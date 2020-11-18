@@ -25,7 +25,7 @@ func _on_button_menu_pressed():
 	pass
 
 # IDK why but it fixes problem with returning to main menu via gamepad
-func _process(delta):
+func _process(_delta):
 	if (visible):
 		if (Input.is_action_just_released("ui_cancel")):
 			get_tree().change_scene("res://resources/scenes/main_menu.tscn")
