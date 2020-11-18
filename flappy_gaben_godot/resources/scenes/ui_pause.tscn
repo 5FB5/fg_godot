@@ -94,6 +94,9 @@ __meta__ = {
 
 [node name="gamepad_buttons" type="Control" parent="."]
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="xbox" type="Control" parent="gamepad_buttons"]
 visible = false
@@ -117,6 +120,31 @@ __meta__ = {
 }
 
 [node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox/menu_gamepad"]
+position = Vector2( 640.639, 735 )
+texture = ExtResource( 3 )
+
+[node name="ps4" type="Control" parent="gamepad_buttons"]
+visible = false
+anchor_bottom = 1.0
+
+[node name="resume_gamepad" type="Control" parent="gamepad_buttons/ps4"]
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4/resume_gamepad"]
+position = Vector2( 640.639, 643.692 )
+texture = ExtResource( 4 )
+
+[node name="menu_gamepad" type="Control" parent="gamepad_buttons/ps4"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
 position = Vector2( 640.639, 735 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="buttons/VBoxContainer/button_resume" to="." method="_on_button_resume_pressed"]

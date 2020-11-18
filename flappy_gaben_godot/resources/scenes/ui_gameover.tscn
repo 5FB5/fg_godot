@@ -157,6 +157,34 @@ __meta__ = {
 position = Vector2( 271.636, 866.541 )
 texture = ExtResource( 4 )
 
+[node name="ps4" type="Control" parent="gamepad_buttons"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+
+[node name="restart_gamepad" type="Control" parent="gamepad_buttons/ps4"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4/restart_gamepad"]
+position = Vector2( 271.67, 760 )
+texture = ExtResource( 5 )
+
+[node name="menu_gamepad" type="Control" parent="gamepad_buttons/ps4"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
+position = Vector2( 271.636, 866.541 )
+texture = ExtResource( 4 )
+
 [node name="buttons" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0

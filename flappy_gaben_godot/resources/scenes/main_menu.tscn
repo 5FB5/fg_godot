@@ -114,6 +114,34 @@ texture = ExtResource( 3 )
 [node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox/menu_gamepad"]
 position = Vector2( 262.924, 710 )
 texture = ExtResource( 4 )
+
+[node name="ps4" type="Control" parent="gamepad_buttons"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="fullscreen_gamepad" type="Control" parent="gamepad_buttons/ps4"]
+margin_right = 101.0
+margin_bottom = 106.0
+
+[node name="ps4_buttonX" type="Sprite" parent="gamepad_buttons/ps4/fullscreen_gamepad"]
+position = Vector2( 220, 50.454 )
+texture = ExtResource( 5 )
+
+[node name="menu_gamepad" type="Control" parent="gamepad_buttons/ps4"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 880.0
+margin_right = 880.0
+
+[node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
+position = Vector2( 261.924, 564.83 )
+texture = ExtResource( 3 )
+
+[node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
+position = Vector2( 262.924, 710 )
+texture = ExtResource( 4 )
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]
