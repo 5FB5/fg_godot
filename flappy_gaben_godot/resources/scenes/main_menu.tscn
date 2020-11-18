@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonA.png" type="Texture" id=3]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonB.png" type="Texture" id=4]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonX.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonSquare.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonSircle.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonX.png" type="Texture" id=8]
 
 [node name="menuRoot" type="Control"]
 anchor_right = 1.0
@@ -126,7 +129,7 @@ margin_bottom = 106.0
 
 [node name="ps4_buttonX" type="Sprite" parent="gamepad_buttons/ps4/fullscreen_gamepad"]
 position = Vector2( 220, 50.454 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="menu_gamepad" type="Control" parent="gamepad_buttons/ps4"]
 anchor_left = 0.5
@@ -137,11 +140,11 @@ margin_right = 880.0
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
 position = Vector2( 261.924, 564.83 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
 position = Vector2( 262.924, 710 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]

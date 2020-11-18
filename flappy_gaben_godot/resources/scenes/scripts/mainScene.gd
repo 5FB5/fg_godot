@@ -8,10 +8,11 @@ func _on_player__death():
 	
 	# Hide main score label
 	get_node("ui_layer/UI/Score").visible = false
-	print("UI: Score hidden")
+	print("UI: Current Score label hidden")
 	
 	# Show game over screen
 	get_node("ui_layer/UI/Game Over").visible = true
+	print("UI: Game Over screen activated")
 	pass
 
 # If death by ceiling
@@ -20,8 +21,9 @@ func _on_player__death_ceiling():
 	
 	# Hide main score label
 	get_node("ui_layer/UI/Score").visible = false
-	print("UI: Score hidden")
+	print("UI: Current Score label hidden")
 	
 	# Show game over screen
 	get_node("ui_layer/UI/Game Over").visible = true
+	print("UI: Game Over screen activated")
 	pass

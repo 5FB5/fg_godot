@@ -9,7 +9,7 @@ var playerScore: int = 0
 var playerBestScore: int = 0
 
 func _input(event):
-	# XOne or PS4
+	# If gamepad is connected
 	if (Input.get_joy_name(0)):
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	else:
@@ -27,7 +27,7 @@ func loadBestScore():
 	playerBestScore = fileBestScoreLoad.get_32()
 	fileBestScoreLoad.close()
 	
-	print("Code: loadBestScore() activated")
+	print("Code: loadBestScore()")
 	pass
 
 func _ready():

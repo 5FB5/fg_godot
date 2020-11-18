@@ -17,7 +17,7 @@ func saveBestScore(_value):
 	fileBestScoreSave.store_32(int(_value))
 	fileBestScoreSave.close()
 	
-	print("Code: saveBestScore() activated")
+	print("Code: saveBestScore()")
 	pass
 
 #Signal for death function for once activation

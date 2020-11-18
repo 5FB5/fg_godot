@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/scenes/scripts/ui_gameover.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/debug_text.tres" type="DynamicFont" id=2]
 [ext_resource path="res://resources/fonts/fg_score.tres" type="DynamicFont" id=3]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonB.png" type="Texture" id=4]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonA.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonX.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonSircle.png" type="Texture" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -172,7 +174,7 @@ __meta__ = {
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4/restart_gamepad"]
 position = Vector2( 271.67, 760 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="menu_gamepad" type="Control" parent="gamepad_buttons/ps4"]
 margin_right = 40.0
@@ -183,7 +185,7 @@ __meta__ = {
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
 position = Vector2( 271.636, 866.541 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="buttons" type="MarginContainer" parent="."]
 anchor_left = 0.5

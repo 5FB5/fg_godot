@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_pause.gd" type="Script" id=2]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonB.png" type="Texture" id=3]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonA.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonX.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonSircle.png" type="Texture" id=6]
 
 [node name="Control" type="Control"]
 pause_mode = 2
@@ -135,7 +137,7 @@ __meta__ = {
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4/resume_gamepad"]
 position = Vector2( 640.639, 643.692 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="menu_gamepad" type="Control" parent="gamepad_buttons/ps4"]
 margin_right = 40.0
@@ -146,6 +148,6 @@ __meta__ = {
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4/menu_gamepad"]
 position = Vector2( 640.639, 735 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 [connection signal="pressed" from="buttons/VBoxContainer/button_resume" to="." method="_on_button_resume_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_pressed" flags=6]
