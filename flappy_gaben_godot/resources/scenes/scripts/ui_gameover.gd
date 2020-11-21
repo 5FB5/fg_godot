@@ -45,6 +45,7 @@ func _process(_delta):
 	# If gamepad isn't connected
 	else:
 		# Hide all gamepad's icons
-		$gamepad_buttons.visible = false
+		$buttons/gamepad_buttons/xbox.visible = false
+		$buttons/gamepad_buttons/ps4.visible = false
 	
 	pass

@@ -29,7 +29,7 @@ layer = 2
 pause_mode = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-[connection signal="_death" from="player/player" to="player/player" method="_on_player__death" flags=6]
 [connection signal="_death" from="player/player" to="." method="_on_player__death" flags=6]
-[connection signal="_death_ceiling" from="player/player" to="player/player" method="_on_player__death_ceiling" flags=6]
+[connection signal="_death" from="player/player" to="player/player" method="_on_player__death" flags=6]
 [connection signal="_death_ceiling" from="player/player" to="." method="_on_player__death_ceiling" flags=6]
+[connection signal="_death_ceiling" from="player/player" to="player/player" method="_on_player__death_ceiling" flags=6]
