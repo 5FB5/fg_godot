@@ -3,11 +3,12 @@
 [ext_resource path="res://resources/scenes/scripts/ui.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/fg_score.tres" type="DynamicFont" id=2]
 [ext_resource path="res://resources/scenes/scripts/score_label.gd" type="Script" id=3]
-[ext_resource path="res://resources/scenes/ui_pause.tscn" type="PackedScene" id=4]
-[ext_resource path="res://resources/scenes/ui_gameover.tscn" type="PackedScene" id=5]
+[ext_resource path="res://resources/scenes/ui/ui_pause.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/scenes/ui/ui_gameover.tscn" type="PackedScene" id=5]
 [ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonOptions.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/ui/buttons/xbox_buttonStart.png" type="Texture" id=7]
 [ext_resource path="res://resources/fonts/debug_text.tres" type="DynamicFont" id=8]
+
 
 [node name="UI" type="Control"]
 pause_mode = 2

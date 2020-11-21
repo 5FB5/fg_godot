@@ -7,7 +7,7 @@ func _ready():
 
 #Main spawning func that load tube's instance and set his position	
 func spawnTube():
-	var newTube = preload("res://resources/scenes/tube.tscn").instance()
+	var newTube = preload("res://resources/scenes/tube/tube.tscn").instance()
 	
 	add_child(newTube)
 	

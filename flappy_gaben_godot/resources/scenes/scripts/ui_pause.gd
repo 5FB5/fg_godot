@@ -21,14 +21,14 @@ func _on_button_resume_pressed():
 	pass 
 
 func _on_button_menu_pressed():
-	get_tree().change_scene("res://resources/scenes/main_menu.tscn")
+	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
 	pass
 
 # IDK why but it fixes problem with returning to main menu via gamepad
 func _process(_delta):
 	if (visible):
 		if (Input.is_action_just_released("ui_cancel")):
-			get_tree().change_scene("res://resources/scenes/main_menu.tscn")
+			get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
 		
 		# Change UI button icons
 		# If XOne controller

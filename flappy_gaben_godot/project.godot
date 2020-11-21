@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="flappy_gaben"
-run/main_scene="res://resources/scenes/main_menu.tscn"
+run/main_scene="res://resources/scenes/ui/main_menu.tscn"
 config/icon="res://resources/icon.png"
 
 [autoload]
