@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://resources/sprites/background/spr_hat1_0.png" type="Texture" id=1]
+[ext_resource path="res://resources/scenes/particles/background/particles_hats_and_cases.tres" type="Material" id=2]
+[ext_resource path="res://resources/sprites/background/spr_hat2_0.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/background/spr_hat4_0.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/background/spr_hat5_0.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/background/spr_hat9_0.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/background/spr_hat8_0.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/background/spr_hat10_0.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/background/spr_hat3_0.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/background/spr_hat6_0.png" type="Texture" id=10]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="hats" type="Node2D" parent="."]
+
+[node name="hat1" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -677.964, -15.5742, 1344.96, 3475.53 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 1 )
+
+[node name="hat2" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -763.483, 0, 1178.1, 2740.48 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 3 )
+
+[node name="hat3" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -371.296, -5.86997, 833.065, 2669.63 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 6 )
+
+[node name="hat4" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -629.782, -12.545, 1196.24, 2805.42 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 10 )
+
+[node name="hat5" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -760.389, -4.57709, 1777.49, 2290.28 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 4 )
+
+[node name="hat6" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -549.006, -4.92954, 1243.73, 2739.97 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 7 )
+
+[node name="hat7" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -248.858, -11.6636, 956.848, 2820.42 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 5 )
+
+[node name="hat8" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -655.776, -10.087, 1317.37, 2789.56 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 8 )
+
+[node name="hat9" type="Particles2D" parent="hats"]
+position = Vector2( 2203.56, 505.055 )
+rotation = 1.5708
+amount = 6
+lifetime = 10.0
+speed_scale = 1.5
+explosiveness = 0.2
+randomness = 0.09
+fixed_fps = 60
+visibility_rect = Rect2( -475.215, -10.3974, 1279.98, 2658.71 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 9 )
+
+[node name="csgo_cases" type="Node2D" parent="."]
