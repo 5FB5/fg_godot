@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
@@ -9,6 +9,12 @@
 [ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonSircle.png" type="Texture" id=7]
 [ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonX.png" type="Texture" id=8]
 [ext_resource path="res://resources/scenes/particles/background/background_menu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://resources/fonts/title_texts.tres" type="DynamicFont" id=10]
+[ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
+[ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 12 )
 
 [node name="menuRoot" type="Control"]
 anchor_right = 1.0
@@ -17,6 +23,19 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 9 )]
 
 [node name="gamepad_buttons" type="Control" parent="."]
 anchor_right = 1.0
@@ -62,16 +81,34 @@ position = Vector2( 1162.92, 710 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="."]
+[node name="labelMain" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -327.5
-margin_top = 70.0
-margin_right = 327.5
-margin_bottom = 183.0
+margin_left = -960.0
+margin_top = 80.0
+margin_right = 960.0
+margin_bottom = 215.0
 custom_fonts/font = ExtResource( 1 )
 text = "Flappy Gaben"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labelJokes" type="Label" parent="."]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 31.5297
+margin_top = 255.679
+margin_right = 707.53
+margin_bottom = 390.679
+rect_rotation = -12.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
+text = "splash screen"
+align = 1
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -127,19 +164,6 @@ margin_right = 94.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 70, 30 )
 text = "Fullscreen"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]
