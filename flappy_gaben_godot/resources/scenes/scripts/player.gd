@@ -73,6 +73,7 @@ func death_ceilingCollision():
 func jump(_delta):
 	if (_globalVars.playerCanFly):
 		linear_velocity.y -= jumpForce * _delta
+		$Sprite.rotation_degrees = -3
 	pass
 
 #Basic settings for player
@@ -87,6 +88,7 @@ func _ready():
 func _process(delta):
 	if (_globalVars.playerCanFly == true):
 			linear_velocity.y += gravityForce * delta #Player's droping
+			$Sprite.rotation_degrees += 0.35
 				
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)

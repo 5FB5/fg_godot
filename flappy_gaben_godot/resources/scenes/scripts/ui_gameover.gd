@@ -25,7 +25,7 @@ func _on_button_restart_pressed():
 
 func _on_button_menu_pressed():
 	visible = false
-	get_tree().change_scene("res://resources/scenes/main_menu.tscn")
+	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
 	pass
 
 func _process(_delta):
@@ -45,6 +45,7 @@ func _process(_delta):
 	# If gamepad isn't connected
 	else:
 		# Hide all gamepad's icons
-		$gamepad_buttons.visible = false
+		$buttons/gamepad_buttons/xbox.visible = false
+		$buttons/gamepad_buttons/ps4.visible = false
 	
 	pass
