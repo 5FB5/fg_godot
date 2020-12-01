@@ -13,7 +13,7 @@
 [ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
 [ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
 
 [node name="menuRoot" type="Control"]
@@ -96,7 +96,7 @@ __meta__ = {
 }
 
 [node name="labelJokes" type="Label" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 31.5297
