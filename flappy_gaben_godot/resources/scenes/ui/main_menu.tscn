@@ -165,6 +165,19 @@ margin_right = 94.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 70, 30 )
 text = "Fullscreen"
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -30.0
+margin_right = 138.0
+margin_bottom = -16.0
+rect_scale = Vector2( 1.2, 1.2 )
+text = "ver. 1.0.0a (debug)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]
