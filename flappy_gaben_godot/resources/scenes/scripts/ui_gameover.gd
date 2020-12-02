@@ -12,7 +12,7 @@ func _input(event):
 				get_node("/root/GlobalVar").playerScore = 0;
 			
 			elif (event.is_action_released("ui_cancel")):
-				get_tree().change_scene("res://resources/scenes/main_menu.tscn")
+				get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
 pass
 
 func _on_button_restart_pressed():

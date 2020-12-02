@@ -40,6 +40,8 @@ __meta__ = {
 [node name="gamepad_buttons" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.5874
+margin_bottom = 1.5874
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,17 +50,20 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="xbox_buttonX" type="Sprite" parent="gamepad_buttons/xbox"]
 position = Vector2( 220, 50.454 )
 texture = ExtResource( 5 )
 
 [node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1161.92, 564.83 )
+position = Vector2( 1161.92, 595.861 )
 texture = ExtResource( 3 )
 
 [node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1162.92, 710 )
+position = Vector2( 1162.92, 682.618 )
 texture = ExtResource( 4 )
 
 [node name="ps4" type="Control" parent="gamepad_buttons"]
@@ -72,12 +77,12 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1161.92, 564.83 )
+position = Vector2( 1161.92, 596.111 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 8 )
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1162.92, 710 )
+position = Vector2( 1162.92, 683.553 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 7 )
 
@@ -174,7 +179,7 @@ margin_top = -30.0
 margin_right = 138.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.0.0a (debug)"
+text = "ver. 1.0.1a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -58,6 +58,7 @@ func _on_player__death_ceiling():
 #Death function if player collides with tube	
 func death_tubeCollision():
 	linear_velocity.y += 50
+	$Sprite.rotation_degrees += 10
 	
 	if (position.y > _globalVars.screenSize.y + 600): #When player's drop position more than screen size we hide him
 		emit_signal("_death")
@@ -67,6 +68,7 @@ func death_tubeCollision():
 func death_ceilingCollision():
 	emit_signal("_death_ceiling")
 	linear_velocity.y += 50
+	$Sprite.rotation_degrees += 10
 	pass
 
 #Player jumping function
@@ -84,7 +86,7 @@ func _ready():
 	print("Code: Player spawned")
 	pass
 
-#Main function
+# Main function
 func _process(delta):
 	if (_globalVars.playerCanFly == true):
 			linear_velocity.y += gravityForce * delta #Player's droping
