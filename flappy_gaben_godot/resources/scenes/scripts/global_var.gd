@@ -30,7 +30,20 @@ func loadBestScore():
 	print("Code: loadBestScore()")
 	pass
 
+func setFullscreen():
+	var fileFullscreen = File.new()
+	fileFullscreen.open("user://settings.dat", File.READ)
+	var isFullscreen = fileFullscreen.get_32()
+	print(isFullscreen)
+	fileFullscreen.close()
+	
+	if (isFullscreen == 0):
+		OS.window_fullscreen = false
+	else:
+		OS.window_fullscreen = true
+
 func _ready():
 	loadBestScore()
+	setFullscreen()
 	screenSize = get_viewport().size #Get screen size as global var
 	pass
