@@ -1,7 +1,5 @@
 extends Control
 
-var isFullscreen
-
 func _input(event):
 	if (event.is_action_released("ui_accept")):
 		get_tree().change_scene("res://resources/scenes/main.tscn")
@@ -20,18 +18,20 @@ func _on_button_quit_pressed():
 func _on_button_fullscreen_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 	
-	if (bool(OS.window_fullscreen) == true):
+	if (OS.window_fullscreen == true):
 		var fileFullscreen = File.new()
 		fileFullscreen.open("user://settings.dat", File.WRITE)
-		isFullscreen = 0
-		fileFullscreen.store_32(int(isFullscreen))
+		fileFullscreen.store_32(int(1))
+		get_node("/root/GlobalVar").isFullscreen = 1
 		fileFullscreen.close()
 	else:
 		var fileFullscreen = File.new()
 		fileFullscreen.open("user://settings.dat", File.WRITE)
-		isFullscreen = 1
-		fileFullscreen.store_32(int(isFullscreen))
+		fileFullscreen.store_32(int(0))
+		get_node("/root/GlobalVar").isFullscreen = 0
 		fileFullscreen.close()
+		
+	print(get_node("/root/GlobalVar").isFullscreen)
 	pass
 
 func _ready():

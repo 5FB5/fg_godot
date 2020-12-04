@@ -2,6 +2,7 @@
 extends Node
 
 var screenSize
+var isFullscreen: int = 0
 
 var playerCanFly: bool = true
 
@@ -17,7 +18,17 @@ func _input(event):
 	
 	if (event.is_action_pressed("window_fullscreen")):
 		OS.window_fullscreen = !OS.window_fullscreen
-			
+		
+		if (bool(OS.window_fullscreen) == true):
+			var fileFullscreen = File.new()
+			fileFullscreen.open("user://settings.dat", File.WRITE)
+			fileFullscreen.store_32(int(1))
+			fileFullscreen.close()
+		else:
+			var fileFullscreen = File.new()
+			fileFullscreen.open("user://settings.dat", File.WRITE)
+			fileFullscreen.store_32(int(0))
+			fileFullscreen.close()
 	pass
 
 func loadBestScore():
@@ -31,16 +42,17 @@ func loadBestScore():
 	pass
 
 func setFullscreen():
-	var fileFullscreen = File.new()
-	fileFullscreen.open("user://settings.dat", File.READ)
-	var isFullscreen = fileFullscreen.get_32()
+	var file = File.new()
+	file.open("user://settings.dat", File.READ)
+	isFullscreen = file.get_32()
 	print(isFullscreen)
-	fileFullscreen.close()
+	file.close()
 	
 	if (isFullscreen == 0):
 		OS.window_fullscreen = false
 	else:
 		OS.window_fullscreen = true
+	pass
 
 func _ready():
 	loadBestScore()
