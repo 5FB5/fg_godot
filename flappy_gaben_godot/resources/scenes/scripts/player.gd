@@ -89,6 +89,8 @@ func _ready():
 # Main function
 func _process(delta):
 	if (_globalVars.playerCanFly == true):
+			# BUG: player's linear velocity increases to -3000+ on start
+			
 			linear_velocity.y += gravityForce * delta #Player's droping
 			$Sprite.rotation_degrees += 0.35
 				
