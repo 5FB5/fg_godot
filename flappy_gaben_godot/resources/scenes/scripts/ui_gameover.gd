@@ -1,6 +1,6 @@
 extends Control
 
-onready var _globalVar = get_node("/root/GlobalVar")
+onready var _globalVar = get_node_or_null("/root/GlobalVar")
 
 func _input(event):
 		if (visible):
@@ -8,8 +8,8 @@ func _input(event):
 				print("-- Game restarted --")
 				visible = false;
 				get_tree().reload_current_scene()
-				get_node("/root/GlobalVar").playerCanFly = true;
-				get_node("/root/GlobalVar").playerScore = 0;
+				get_node_or_null("/root/GlobalVar").playerCanFly = true;
+				get_node_or_null("/root/GlobalVar").playerScore = 0;
 			
 			elif (event.is_action_released("ui_cancel")):
 				get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
@@ -19,8 +19,8 @@ func _on_button_restart_pressed():
 	print("-- Game restarted --")
 	visible = false;
 	get_tree().reload_current_scene()
-	get_node("/root/GlobalVar").playerCanFly = true;
-	get_node("/root/GlobalVar").playerScore = 0;
+	get_node_or_null("/root/GlobalVar").playerCanFly = true;
+	get_node_or_null("/root/GlobalVar").playerScore = 0;
 	pass
 
 func _on_button_menu_pressed():

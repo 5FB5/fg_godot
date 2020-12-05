@@ -78,6 +78,13 @@ func jump(_delta):
 		$Sprite.rotation_degrees = -3
 	pass
 
+# Fix for player velocity bug that increases his linear velocity about -3000+ units on start
+# Timer activating for 0.6 seconds and set limit for linear velocity on start of the game
+func _on_Timer_timerWorks():
+	if (linear_velocity.y <= -850):
+		linear_velocity.y = 260
+	pass
+	
 #Basic settings for player
 func _ready():
 	# Set basic position

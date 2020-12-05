@@ -8,7 +8,7 @@ func _ready():
 	self.text = current_text
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	randomize()
 	pass
 	
