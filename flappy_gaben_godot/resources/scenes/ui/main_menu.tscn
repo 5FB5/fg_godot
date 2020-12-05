@@ -171,7 +171,7 @@ margin_bottom = 30.0
 rect_min_size = Vector2( 70, 30 )
 text = "Fullscreen"
 
-[node name="Label" type="Label" parent="."]
+[node name="versionLabel" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0

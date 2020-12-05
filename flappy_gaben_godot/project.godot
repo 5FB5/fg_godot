@@ -40,6 +40,14 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "smoothing" )
 
+[filesystem]
+
+import/open_asset_import/use_fbx=false
+
+[gdnative]
+
+singletons=[  ]
+
 [input]
 
 ui_cancel={
