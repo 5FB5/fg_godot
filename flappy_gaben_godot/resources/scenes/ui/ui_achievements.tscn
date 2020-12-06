@@ -9,7 +9,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "hide"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("achievementPanel:rect_position:x")
@@ -18,30 +18,29 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 0, -0.25, 0, 0.423985, 66.8042, -560, -0.426136, 37.7292, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("achievementPanel:rect_position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.42, 107.007, -200, -0.38, -1.19998, 0.46, 2.40001 ),
-"times": PoolRealArray( 0, 0.6 )
+"points": PoolRealArray( 0, -0.25, 0, 0.42, 107.007, -200, -0.38, -1.19998, 0.46, 2.40001, 18.042, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 0.7 )
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "popup"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("achievementPanel:rect_position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -560, -0.25, 0, 0.353829, 23.433, 1.63255, -0.493899, 50.8754, 0.375423, -48.0204 ),
 "times": PoolRealArray( 0, 0.5 )
 }
 tracks/1/type = "bezier"
@@ -51,8 +50,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -200, -0.25, 0, 0.373065, -6.68382, 0, -0.765826, 102.139, 0, -1.728 ),
-"times": PoolRealArray( 0, 0.7 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.204192, -209.058 ),
+"times": PoolRealArray( 0, 0.9 )
 }
 
 [node name="root" type="Control"]
@@ -63,9 +62,8 @@ __meta__ = {
 }
 
 [node name="achievementPanel" type="Control" parent="."]
-margin_top = -200.0
-margin_right = 40.0
-margin_bottom = -160.0
+margin_right = 39.9999
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,5 +121,5 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/hide = SubResource( 3 )
-anims/popup = SubResource( 2 )
+anims/hide = SubResource( 2 )
+anims/popup = SubResource( 3 )
