@@ -1,0 +1,20 @@
+{
+    "Achievement1": {
+        "description": "test1",
+        "is_secret": 0,
+        "progress": 0,
+        "icon_path": "res://resources/achievements/resources/icons/achievement_test.png"
+    },
+    "Achievement2": {
+        "description": "test2",
+        "is_secret": 1,
+        "progress": 100,
+        "icon_path": "res://resources/achievements/resources/icons/achievement_test.png"
+    },
+    "Achievement3": {
+        "description": "test3",
+        "is_secret": 0,
+        "progress": 0,
+        "icon_path": "res://resources/achievements/resources/icons/achievement_test.png"
+    }
+}

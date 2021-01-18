@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resources/fonts/title_texts.tres" type="DynamicFont" id=10]
 [ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
 [ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
+[ext_resource path="res://resources/achievements/resources/game_ui/ui_achievements_main.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
@@ -23,6 +24,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="achievements" parent="." instance=ExtResource( 13 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -152,10 +155,10 @@ rect_min_size = Vector2( 300, 52 )
 text = "QUIT"
 
 [node name="checkboxes" type="MarginContainer" parent="."]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 124.0
-margin_bottom = 69.9999
+margin_left = 15.058
+margin_top = 989.932
+margin_right = 109.058
+margin_bottom = 1029.93
 rect_scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -174,12 +177,12 @@ text = "Fullscreen"
 [node name="versionLabel" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
+margin_left = 22.0
 margin_top = -30.0
-margin_right = 138.0
+margin_right = 140.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.0.4a (debug)"
+text = "ver. 1.1.0a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
