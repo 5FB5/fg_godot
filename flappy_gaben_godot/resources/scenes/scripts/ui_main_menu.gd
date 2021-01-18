@@ -1,10 +1,27 @@
 extends Control
 
 func _input(event):
+	# If user press any accept button, we go to play
 	if (event.is_action_released("ui_accept")):
 		get_tree().change_scene("res://resources/scenes/main.tscn")
 	elif (event.is_action_released("ui_cancel")):
 		get_tree().quit()
+		
+	# Change UI button icons
+	# If XOne controller
+	if (Input.get_joy_name(0)):
+		if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
+			$gamepad_buttons/xbox.visible = true
+
+		# If PS4 controller
+		elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
+			$gamepad_buttons/ps4.visible = true
+	
+	# If gamepad isn't connected
+	else:
+		# Hide all gamepad's icons
+		$gamepad_buttons/xbox.visible = false
+		$gamepad_buttons/ps4.visible = false	
 	pass
 
 func _on_button_start_pressed():
@@ -41,22 +58,4 @@ func _ready():
 	else:
 		get_node("/root/GlobalVar").playerCanFly = true
 		get_node("/root/GlobalVar").playerScore = 0
-	pass
-
-func _process(_delta):
-	# Change UI button icons
-	# If XOne controller
-	if (Input.get_joy_name(0)):
-		if (Input.get_joy_guid(0) == "__XINPUT_DEVICE__"):
-			$gamepad_buttons/xbox.visible = true
-
-		# If PS4 controller
-		elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
-			$gamepad_buttons/ps4.visible = true
-	
-	# If gamepad isn't connected
-	else:
-		# Hide all gamepad's icons
-		$gamepad_buttons/xbox.visible = false
-		$gamepad_buttons/ps4.visible = false	
 	pass

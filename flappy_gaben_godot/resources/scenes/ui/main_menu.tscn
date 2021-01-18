@@ -58,7 +58,7 @@ __meta__ = {
 }
 
 [node name="xbox_buttonX" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 220, 50.454 )
+position = Vector2( 212.425, 1007.42 )
 texture = ExtResource( 5 )
 
 [node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox"]
@@ -75,7 +75,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ps4_buttonX" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 220, 50.454 )
+position = Vector2( 212.425, 1007.42 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 

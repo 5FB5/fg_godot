@@ -3,6 +3,6 @@ extends Timer
 
 signal timerWorks
 
-func _process(delta):
+func _process(_delta):
 	if (!is_stopped()):
 		emit_signal("timerWorks")
