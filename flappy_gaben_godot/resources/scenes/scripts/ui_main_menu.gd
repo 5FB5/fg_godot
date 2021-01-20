@@ -41,17 +41,18 @@ func _on_button_fullscreen_pressed():
 		fileFullscreen.store_32(int(1))
 		get_node("/root/GlobalVar").isFullscreen = 1
 		fileFullscreen.close()
+		print('Fullscreen mode')
 	else:
 		var fileFullscreen = File.new()
 		fileFullscreen.open("user://settings.dat", File.WRITE)
 		fileFullscreen.store_32(int(0))
 		get_node("/root/GlobalVar").isFullscreen = 0
 		fileFullscreen.close()
+		print('Window mode')
 		
-	print(get_node("/root/GlobalVar").isFullscreen)
 	pass
 
-func _ready():
+func _ready():	
 	if (get_tree().paused):
 		get_tree().paused = false
 		get_node("/root/GlobalVar").playerCanFly = true

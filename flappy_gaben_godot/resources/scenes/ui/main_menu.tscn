@@ -182,7 +182,7 @@ margin_top = -30.0
 margin_right = 140.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.1.0a (debug)"
+text = "ver. 1.2.0a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
