@@ -21,8 +21,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="achievements" parent="." instance=ExtResource( 9 )]
-
 [node name="Score" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 margin_top = 80.0
@@ -107,6 +105,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="achievements" parent="." instance=ExtResource( 9 )]
 [connection signal="achievement20TubesShow" from="." to="." method="_on_UI_achievement20TubesShow" flags=6]
 [connection signal="achievement50TubesShow" from="." to="." method="_on_UI_achievement50TubesShow" flags=6]
-[connection signal="achievementMaxShow" from="." to="." method="_on_UI_achievementMaxShow" flags=6]

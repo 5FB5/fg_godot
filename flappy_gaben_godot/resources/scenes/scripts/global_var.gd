@@ -14,6 +14,8 @@ var achievement20Tubes = 0
 var achievement50Tubes = 0
 var achievementMax = 0
 
+var isFileJsonExists = false
+
 func _input(event):
 	# If gamepad is connected
 	if (Input.get_joy_name(0)):
@@ -63,6 +65,7 @@ func loadAchievementsStat():
 	print('Code: loadAchievementStat()')
 	var file = File.new()
 	if (file.file_exists("res://resources/achievements/data/achievements.json")):
+		checkIsJsonExists()
 		# Get data from json
 		file.open("res://resources/achievements/data/achievements.json", File.READ)
 		var achievementData = parse_json(file.get_as_text())
@@ -81,10 +84,22 @@ func loadAchievementsStat():
 		print("ERROR: the achievements.json file does not exist! Maybe it's not added to the game.")
 	pass
 
+func checkIsJsonExists():
+	print("Code: checkIsJsonExists()")
+	var file = File.new()
+	if (file.file_exists("res://resources/achievements/data/achievements.json")):
+		isFileJsonExists = true
+		print("		isFileJsonExists = true")
+	else:
+		isFileJsonExists = false
+		print("		isFileJsonExists = false")
+	file.close()
+	pass
+
 func _init():
 	loadAchievementsStat()
 	
-func _ready():
+func _ready():	
 	loadBestScore()
 	setFullscreen()
 	screenSize = get_viewport().size #Get screen size as global var

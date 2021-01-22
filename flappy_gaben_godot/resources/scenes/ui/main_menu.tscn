@@ -186,6 +186,7 @@ text = "ver. 1.2.0a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="achievementMaxActivate" from="." to="." method="_on_menuRoot_achievementMaxActivate" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]

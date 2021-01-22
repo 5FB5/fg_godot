@@ -1,6 +1,31 @@
 extends Control
 
+signal achievementMaxActivate()
+
 func _input(event):
+	# Activate MAX achievement
+	if (get_node("/root/GlobalVar").isFileJsonExists == true):
+		if (Input.is_key_pressed(KEY_M) and Input.is_key_pressed(KEY_A) and Input.is_key_pressed(KEY_X) and ($"/root/GlobalVar").achievementMax == 0):
+				emit_signal("achievementMaxActivate")
+				
+				# Read data to write new
+				var filetmp = File.new()
+				filetmp.open("res://resources/achievements/data/achievements.json", File.READ)
+				var tmpdata = parse_json(filetmp.get_as_text())
+				filetmp.close()
+			
+				tmpdata.values()[2]['is_have'] = 1
+				get_node("/root/GlobalVar").achievementMax = 1
+			
+				# Write data to write
+				filetmp = File.new()
+				filetmp.open("res://resources/achievements/data/achievements.json", File.WRITE)
+				filetmp.store_string(JSON.print(tmpdata, " ", true))
+				filetmp.close()	
+				
+				pass
+		pass
+	
 	# If user press any accept button, we go to play
 	if (event.is_action_released("ui_accept")):
 		get_tree().change_scene("res://resources/scenes/main.tscn")
@@ -16,7 +41,7 @@ func _input(event):
 		# If PS4 controller
 		elif (Input.get_joy_guid(0) == "4c05c405000000000000504944564944"):
 			$gamepad_buttons/ps4.visible = true
-	
+				
 	# If gamepad isn't connected
 	else:
 		# Hide all gamepad's icons
@@ -60,3 +85,8 @@ func _ready():
 		get_node("/root/GlobalVar").playerCanFly = true
 		get_node("/root/GlobalVar").playerScore = 0
 	pass
+
+
+func _on_menuRoot_achievementMaxActivate():
+	$achievements.emit_signal("showAchievement", 2)
+	pass # Replace with function body.

@@ -1,18 +1,7 @@
 extends Control
 
-var fileJsonExists = false
-
-signal achievement20TubesShow
-signal achievement50TubesShow
-signal achievementMaxShow
-
-func _ready():
-	var file = File.new()
-	if (file.file_exists("res://resources/achievements/data/achievements.json")):
-		fileJsonExists = true
-	else:
-		fileJsonExists = false
-	file.close()
+signal achievement20TubesShow()
+signal achievement50TubesShow()
 
 func _process(_delta):
 	# Change UI button icons
@@ -36,7 +25,7 @@ func _process(_delta):
 		$Menu.visible = true
 
 	# Check is player get an achievement
-	if (fileJsonExists == true):
+	if (get_node("/root/GlobalVar").isFileJsonExists == true):
 		# 20 Tubes achievement
 		if (get_node("/root/GlobalVar").playerBestScore >= 20 and get_node("/root/GlobalVar").achievement20Tubes == 0):
 			emit_signal("achievement20TubesShow")
@@ -82,9 +71,4 @@ func _on_UI_achievement20TubesShow():
 
 func _on_UI_achievement50TubesShow():
 	$achievements.emit_signal("showAchievement", 1)
-	pass
-
-
-func _on_UI_achievementMaxShow():
-	$achievements.emit_signal("showAchievement", 2)
 	pass
