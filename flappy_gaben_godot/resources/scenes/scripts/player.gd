@@ -31,8 +31,8 @@ func _on_player__death():
 		_globalVars.playerBestScore = _globalVars.playerScore
 		saveBestScore(_globalVars.playerBestScore) #Save progress
 	
-	self.hide()
-	print("Code: Player.hide()")
+	queue_free()##self.hide()
+	print("Code: Player.queue_free()")
 	print("Game: Best score = ", _globalVars.playerBestScore, ". Game over!")
 	print("-- END Player Death --")
 	pass
@@ -49,9 +49,9 @@ func _on_player__death_ceiling():
 		saveBestScore(_globalVars.playerBestScore) #Save progress
 	
 	if ((position.y > _globalVars.screenSize.y + 600)):
-		self.hide()
+		queue_free()#self.hide()
 		
-	print("Code: Player.hide()")
+	print("Code: Player.queue_free()")
 	print("-- END Player Death --")
 	pass
 
@@ -74,7 +74,7 @@ func death_ceilingCollision():
 #Player jumping function
 func jump(_delta):
 	if (_globalVars.playerCanFly):
-		linear_velocity.y -= jumpForce * _delta
+		linear_velocity.y -= jumpForce * _delta + Engine.get_physics_interpolation_fraction()
 		$Sprite.rotation_degrees = -3
 	pass
 
@@ -85,11 +85,16 @@ func _on_Timer_timerWorks():
 		linear_velocity.y = 260
 	pass
 	
+func _input(_event):
+	if (_globalVars.playerCanFly == true):
+			if (Input.is_action_just_pressed("game_pause")):
+				linear_velocity.y = 0
+	pass
+	
 #Basic settings for player
 func _ready():
 	# Set basic position
 	position = Vector2(184, 200)
-
 	print("Code: Player spawned")
 	pass
 
@@ -101,9 +106,6 @@ func _process(delta):
 				
 			if (Input.is_action_just_pressed("player_jump")):
 				jump(delta)
-			
-			if (Input.is_action_just_pressed("game_pause")):
-				linear_velocity.y = 0
 			
 			 #When player's drop position more than screen size in game loop we hide him
 			if ((position.y > _globalVars.screenSize.y + 600)):

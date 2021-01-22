@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resources/fonts/title_texts.tres" type="DynamicFont" id=10]
 [ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
 [ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
+[ext_resource path="res://resources/achievements/resources/game_ui/ui_achievements_main.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
@@ -23,6 +24,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="achievements" parent="." instance=ExtResource( 13 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -55,7 +58,7 @@ __meta__ = {
 }
 
 [node name="xbox_buttonX" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 220, 50.454 )
+position = Vector2( 212.425, 1007.42 )
 texture = ExtResource( 5 )
 
 [node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox"]
@@ -72,7 +75,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ps4_buttonX" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 220, 50.454 )
+position = Vector2( 212.425, 1007.42 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
@@ -152,10 +155,10 @@ rect_min_size = Vector2( 300, 52 )
 text = "QUIT"
 
 [node name="checkboxes" type="MarginContainer" parent="."]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 124.0
-margin_bottom = 69.9999
+margin_left = 15.058
+margin_top = 989.932
+margin_right = 109.058
+margin_bottom = 1029.93
 rect_scale = Vector2( 1.5, 1.5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -171,18 +174,19 @@ margin_bottom = 30.0
 rect_min_size = Vector2( 70, 30 )
 text = "Fullscreen"
 
-[node name="Label" type="Label" parent="."]
+[node name="versionLabel" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
+margin_left = 22.0
 margin_top = -30.0
-margin_right = 138.0
+margin_right = 140.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.0.4a (debug)"
+text = "ver. 1.2.0a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="achievementMaxActivate" from="." to="." method="_on_menuRoot_achievementMaxActivate" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]

@@ -179,5 +179,9 @@ margin_right = 300.0
 margin_bottom = 375.0
 rect_min_size = Vector2( 300, 52 )
 text = "MENU"
+[connection signal="uiPs4Hide" from="." to="." method="_on_Control_uiPs4Hide"]
+[connection signal="uiPs4Show" from="." to="." method="_on_Control_uiPs4Show"]
+[connection signal="uiXboxHide" from="." to="." method="_on_Control_uiXboxHide"]
+[connection signal="uiXboxShow" from="." to="." method="_on_Control_uiXboxShow"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_restart" to="." method="_on_button_restart_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_pressed" flags=6]

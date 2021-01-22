@@ -1,0 +1,23 @@
+{
+ "20 Tubes!": {
+  "description": "Go through 20 tubes.",
+  "icon_path": "res://resources/achievements/resources/icons/spr_achiev20tubes.png",
+  "is_have": 0,
+  "is_secret": 0,
+  "progress": 20
+ },
+ "50 Tubes!": {
+  "description": "Go through 50 tubes.",
+  "icon_path": "res://resources/achievements/resources/icons/spr_achiev50tubes_0.png",
+  "is_have": 0,
+  "is_secret": 0,
+  "progress": 50
+ },
+ "Become Max!": {
+  "description": "Activate MAX keyboard combination.",
+  "icon_path": "res://resources/achievements/resources/icons/spr_achiev_maks_0.png",
+  "is_have": 0,
+  "is_secret": 1,
+  "progress": 0
+ }
+}
