@@ -2,6 +2,28 @@ extends Control
 
 signal achievementMaxActivate()
 
+var mainscene = preload("res://resources/scenes/main.tscn")
+
+func freeMemoryOnEnd():
+	print("-- Game end -- ")
+	print("Code: freeMemoryOnEnd()")
+	if(mainscene.is_queued_for_deletion()):
+		mainscene.free()
+	
+	$CanvasLayer.queue_free()
+	$achievements.queue_free()
+	$gamepad_buttons.queue_free()
+	$labelJokes.queue_free()
+	$labelMain.queue_free()
+	$buttons.queue_free()
+	$checkboxes.queue_free()
+	$versionLabel.queue_free()
+	
+	get_tree().root.queue_free()
+	get_tree().quit()
+	pass
+
+
 func _input(event):
 	# Activate MAX achievement
 	if (get_node("/root/GlobalVar").isFileJsonExists == true):
@@ -30,7 +52,7 @@ func _input(event):
 	if (event.is_action_released("ui_accept")):
 		get_tree().change_scene("res://resources/scenes/main.tscn")
 	elif (event.is_action_released("ui_cancel")):
-		get_tree().quit()
+		freeMemoryOnEnd()
 		
 	# Change UI button icons
 	# If XOne controller
@@ -50,11 +72,11 @@ func _input(event):
 	pass
 
 func _on_button_start_pressed():
-	get_tree().change_scene("res://resources/scenes/main.tscn")
+	get_tree().change_scene_to(mainscene)
 	pass
 
 func _on_button_quit_pressed():
-	get_tree().quit()
+	freeMemoryOnEnd()
 	pass
 
 func _on_button_fullscreen_pressed():
