@@ -99,6 +99,12 @@ func _on_button_fullscreen_pressed():
 		
 	pass
 
+# Free memory when player pressed Windows's quit button 
+func _notification(what):
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+		freeMemoryOnEnd()
+	pass
+
 func _ready():	
 	if (get_tree().paused):
 		get_tree().paused = false
