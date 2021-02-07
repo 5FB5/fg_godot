@@ -10,7 +10,7 @@ signal uiPs4Hide()
 func _input(event):
 		if (visible):
 			if (event.is_action_released("ui_accept")):
-				print("-- Game restarted --")
+				Print.line(Print.GREEN, "-- Game restarted --")
 				visible = false;
 				get_tree().reload_current_scene()
 				get_node_or_null("/root/GlobalVar").playerCanFly = true;
@@ -21,7 +21,7 @@ func _input(event):
 pass
 
 func _on_button_restart_pressed():
-	print("-- Game restarted --")
+	Print.line(Print.GREEN, "-- Game restarted --")
 	visible = false;
 	get_tree().reload_current_scene()
 	get_node_or_null("/root/GlobalVar").playerCanFly = true;

@@ -17,12 +17,12 @@ func saveBestScore(_value):
 	fileBestScoreSave.store_32(int(_value))
 	fileBestScoreSave.close()
 	
-	print("Code: saveBestScore()")
+	Print.line(Print.YELLOW, "Code: saveBestScore()")
 	pass
 
 #Signal for death function for once activation
 func _on_player__death():
-	print("-- Player Death --")
+	Print.line(Print.GREEN, "-- Player Death --")
 	_globalVars.playerCanFly = false
 	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
 	
@@ -32,13 +32,13 @@ func _on_player__death():
 		saveBestScore(_globalVars.playerBestScore) #Save progress
 	
 	queue_free()##self.hide()
-	print("Code: Player.queue_free()")
+	Print.line(Print.YELLOW, "Code: Player.queue_free()")
 	print("Game: Best score = ", _globalVars.playerBestScore, ". Game over!")
-	print("-- END Player Death --")
+	Print.line(Print.GREEN, "-- END Player Death --")
 	pass
 
 func _on_player__death_ceiling():
-	print("-- Player Death (ceiling) --")
+	Print.line(Print.GREEN, "-- Player Death (ceiling) --")
 	
 	_globalVars.playerCanFly = false
 	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
@@ -51,8 +51,8 @@ func _on_player__death_ceiling():
 	if ((position.y > _globalVars.screenSize.y + 600)):
 		queue_free()#self.hide()
 		
-	print("Code: Player.queue_free()")
-	print("-- END Player Death --")
+	Print.line(Print.YELLOW, "Code: Player.queue_free()")
+	Print.line(Print.GREEN, "-- END Player Death --")
 	pass
 
 #Death function if player collides with tube	
@@ -95,7 +95,7 @@ func _input(_event):
 func _ready():
 	# Set basic position
 	position = Vector2(184, 200)
-	print("Code: Player spawned")
+	Print.line(Print.YELLOW, "Code: Player spawned")
 	pass
 
 # Main function

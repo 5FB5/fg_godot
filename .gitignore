@@ -2,3 +2,6 @@ builds/*
 flappy_gaben_godot/.import
 flappy_gaben_godot/export_presets.cfg
 flappy_gaben_godot/resources/achievements/data/achievements.json
+flappy_gaben_godot/addons/katuiche-colorful-console/example
+flappy_gaben_godot/addons/katuiche-colorful-console/screenshots
+flappy_gaben_godot/addons/katuiche-colorful-console/README.txt

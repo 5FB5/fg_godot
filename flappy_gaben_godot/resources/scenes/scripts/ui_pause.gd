@@ -10,9 +10,9 @@ func _input(event):
 			visible = not visible
 		
 			if (visible):
-				print("Game: Paused")
+				Print.line(Print.PURPLE, "Game: Paused")
 			else:
-				print("Game: Resumed")
+				Print.line(Print.PURPLE, "Game: Resumed")
 	pass
 
 func _on_button_resume_pressed():
@@ -20,15 +20,20 @@ func _on_button_resume_pressed():
 	visible = not visible
 	pass 
 
-func _on_button_menu_pressed():
+func changeSceneToMainMenu():
+	Print.line(Print.PURPLE, "Game: Change scene to main_menu.tscn")
 	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+	pass
+
+func _on_button_menu_pressed():
+	changeSceneToMainMenu()
 	pass
 
 # IDK why but it fixes problem with returning to main menu via gamepad
 func _process(_delta):
 	if (visible):
 		if (Input.is_action_just_released("ui_cancel")):
-			get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+			changeSceneToMainMenu()
 		
 		# Change UI button icons
 		# If XOne controller

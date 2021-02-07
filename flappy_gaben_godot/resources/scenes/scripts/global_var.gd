@@ -42,12 +42,12 @@ func _input(event):
 	pass
 
 func quitSafe():
-	print("Code: freeMemoryOnEnd()")
+	Print.line(Print.PURPLE, "Game: Quitting process...")
+	Print.line(Print.YELLOW, "	Code: quitSafe()")
 
 	if (mainscene.is_queued_for_deletion()):
 		mainscene.free()
-	
-	print("-- Game end -- ")
+
 	get_tree().root.queue_free()
 	get_tree().quit()
 	pass
@@ -59,7 +59,7 @@ func _notification(what):
 	pass
 
 func loadBestScore():
-	print("Code: loadBestScore()")
+	Print.line(Print.YELLOW, "Code: loadBestScore()")
 	var fileBestScoreLoad = File.new()
 	fileBestScoreLoad.open("user://best_score.dat", File.READ)
 	playerBestScore = fileBestScoreLoad.get_32()
@@ -82,7 +82,7 @@ func setFullscreen():
 # Get achievement's data about does player achieved them
 # It's crutch, I know, I'm sorry :(
 func loadAchievementsStat():
-	print('Code: loadAchievementStat()')
+	Print.line(Print.YELLOW, 'Code: loadAchievementStat()')
 	var file = File.new()
 	if (file.file_exists("res://resources/achievements/data/achievements.json")):
 		checkIsJsonExists()
@@ -101,18 +101,18 @@ func loadAchievementsStat():
 			pass
 		
 	else:
-		print("ERROR: the achievements.json file does not exist! Maybe it's not added to the game.")
+		Print.line(Print.RED, "ERROR: the achievements.json file does not exist! Maybe it's not added to the game.")
 	pass
 
 func checkIsJsonExists():
-	print("Code: checkIsJsonExists()")
+	Print.line(Print.YELLOW, "Code: checkIsJsonExists()")
 	var file = File.new()
 	if (file.file_exists("res://resources/achievements/data/achievements.json")):
 		isFileJsonExists = true
-		print("		isFileJsonExists = true")
+		Print.line(Print.YELLOW, "		isFileJsonExists = true")
 	else:
 		isFileJsonExists = false
-		print("		isFileJsonExists = false")
+		Print.line(Print.YELLOW, "		isFileJsonExists = false")
 	file.close()
 	pass
 

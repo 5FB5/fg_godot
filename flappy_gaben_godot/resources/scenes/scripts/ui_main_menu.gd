@@ -2,8 +2,15 @@ extends Control
 
 signal achievementMaxActivate()
 
+func changeSceneToMainGame():
+	Print.line(Print.BLUE, "Game: Change scene to Main.tscn")
+	get_tree().change_scene_to(get_node("/root/GlobalVar").mainscene)
+	Print.line(Print.BLUE, "Game: Main game loop loaded")
+	pass
+
 func _input(event):
 	# Activate MAX achievement
+	# FIXME: json file doesn't updated in build's package
 	if (get_node("/root/GlobalVar").isFileJsonExists == true):
 		if (Input.is_key_pressed(KEY_M) and Input.is_key_pressed(KEY_A) and Input.is_key_pressed(KEY_X) and ($"/root/GlobalVar").achievementMax == 0):
 				emit_signal("achievementMaxActivate")
@@ -28,7 +35,7 @@ func _input(event):
 	
 	# If user press any accept button, we go to play
 	if (event.is_action_released("ui_accept")):
-		get_tree().change_scene("res://resources/scenes/main.tscn")
+		changeSceneToMainGame()
 	elif (event.is_action_released("ui_cancel")):
 		get_node("/root/GlobalVar").freeMemoryOnEnd()
 		
@@ -48,9 +55,8 @@ func _input(event):
 		$gamepad_buttons/xbox.visible = false
 		$gamepad_buttons/ps4.visible = false	
 	pass
-
 func _on_button_start_pressed():
-	get_tree().change_scene_to(get_node("/root/GlobalVar").mainscene)
+	changeSceneToMainGame()
 	pass
 
 func _on_button_quit_pressed():
@@ -77,7 +83,8 @@ func _on_button_fullscreen_pressed():
 		
 	pass
 
-func _ready():	
+func _ready():
+	Print.line(Print.PURPLE, "Game: Main menu loaded")
 	if (get_tree().paused):
 		get_tree().paused = false
 		get_node("/root/GlobalVar").playerCanFly = true
