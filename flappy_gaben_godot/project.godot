@@ -25,6 +25,10 @@ MainGameVars="*res://resources/scenes/scripts/mainScene.gd"
 GlobalVar="*res://resources/scenes/scripts/global_var.gd"
 Debug="*res://resources/scenes/scripts/debug.gd"
 
+[debug]
+
+settings/stdout/verbose_stdout=true
+
 [display]
 
 window/size/width=1920
@@ -38,7 +42,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "smoothing" )
+enabled=PoolStringArray(  )
 
 [filesystem]
 
@@ -119,6 +123,7 @@ locale_filter=[ 1, [ "en", "ru" ] ]
 [logging]
 
 file_logging/enable_file_logging=true
+file_logging/max_log_files=1
 
 [physics]
 
@@ -127,7 +132,7 @@ common/physics_jitter_fix=0.0
 
 [rendering]
 
-threads/thread_model=2
+quality/intended_usage/framebuffer_allocation=0
 quality/reflections/texture_array_reflections=false
 quality/reflections/high_quality_ggx=false
 quality/subsurface_scattering/quality=0

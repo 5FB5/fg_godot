@@ -16,6 +16,9 @@ var achievementMax = 0
 
 var isFileJsonExists = false
 
+# Preload main game scene
+const mainscene = preload("res://resources/scenes/main.tscn")
+
 func _input(event):
 	# If gamepad is connected
 	if (Input.get_joy_name(0)):
@@ -36,6 +39,23 @@ func _input(event):
 			fileFullscreen.open("user://settings.dat", File.WRITE)
 			fileFullscreen.store_32(int(0))
 			fileFullscreen.close()
+	pass
+
+func quitSafe():
+	print("Code: freeMemoryOnEnd()")
+
+	if (mainscene.is_queued_for_deletion()):
+		mainscene.free()
+	
+	print("-- Game end -- ")
+	get_tree().root.queue_free()
+	get_tree().quit()
+	pass
+
+# Free memory when player pressed Windows's quit button
+func _notification(what):
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+		quitSafe()
 	pass
 
 func loadBestScore():

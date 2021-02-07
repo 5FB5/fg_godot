@@ -1,3 +1,4 @@
 builds/*
 flappy_gaben_godot/.import
 flappy_gaben_godot/export_presets.cfg
+flappy_gaben_godot/resources/achievements/data/achievements.json
