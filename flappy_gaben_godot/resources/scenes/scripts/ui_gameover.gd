@@ -7,6 +7,11 @@ signal uiPs4Show()
 signal uiXboxHide()
 signal uiPs4Hide()
 
+func changeSceneToMainMenu():
+	Print.line(Print.PURPLE, "Game: Change scene to main_menu.tscn")
+	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+	pass
+
 func _input(event):
 		if (visible):
 			if (event.is_action_released("ui_accept")):
@@ -17,7 +22,7 @@ func _input(event):
 				get_node_or_null("/root/GlobalVar").playerScore = 0;
 			
 			elif (event.is_action_released("ui_cancel")):
-				get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+				changeSceneToMainMenu()
 pass
 
 func _on_button_restart_pressed():
@@ -30,7 +35,7 @@ func _on_button_restart_pressed():
 
 func _on_button_menu_pressed():
 	visible = false
-	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+	changeSceneToMainMenu()
 	pass
 
 func _process(_delta):
@@ -52,7 +57,6 @@ func _process(_delta):
 		# Hide all gamepad's icons
 		emit_signal("uiXboxHide")
 		emit_signal("uiPs4Hide")
-	
 	pass
 
 func _on_Control_uiXboxShow():

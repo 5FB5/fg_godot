@@ -43,7 +43,9 @@ __meta__ = {
 [node name="gamepad_buttons" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.5874
 margin_top = 1.5874
+margin_right = 1.5874
 margin_bottom = 1.5874
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,11 +110,11 @@ __meta__ = {
 material = SubResource( 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 31.5297
-margin_top = 255.679
-margin_right = 707.53
-margin_bottom = 390.679
-rect_rotation = -12.0
+margin_left = 64.3073
+margin_top = 250.618
+margin_right = 740.308
+margin_bottom = 385.618
+rect_rotation = 10.7686
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 text = "splash screen"
@@ -186,6 +188,7 @@ text = "ver. 1.2.0a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="achievementMaxActivate" from="." to="." method="_on_menuRoot_achievementMaxActivate" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
