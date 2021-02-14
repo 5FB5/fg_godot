@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
 [ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
 [ext_resource path="res://resources/achievements/resources/game_ui/ui_achievements_main.tscn" type="PackedScene" id=13]
+[ext_resource path="res://resources/scenes/ui/button_scoreboard.gd" type="Script" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
@@ -64,11 +65,11 @@ position = Vector2( 212.425, 1007.42 )
 texture = ExtResource( 5 )
 
 [node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1161.92, 595.861 )
+position = Vector2( 1161.92, 550 )
 texture = ExtResource( 3 )
 
 [node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1162.92, 682.618 )
+position = Vector2( 1162.92, 725 )
 texture = ExtResource( 4 )
 
 [node name="ps4" type="Control" parent="gamepad_buttons"]
@@ -82,12 +83,12 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1161.92, 596.111 )
+position = Vector2( 1161.92, 550 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 8 )
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1162.92, 683.553 )
+position = Vector2( 1162.92, 725 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 7 )
 
@@ -143,16 +144,25 @@ custom_constants/separation = 34
 alignment = 1
 
 [node name="button_start" type="Button" parent="buttons/VBoxContainer"]
-margin_top = 471.0
+margin_top = 428.0
 margin_right = 300.0
-margin_bottom = 523.0
+margin_bottom = 480.0
 rect_min_size = Vector2( 300, 52 )
 text = "START"
 
-[node name="button_quit" type="Button" parent="buttons/VBoxContainer"]
-margin_top = 557.0
+[node name="button_scoreboard" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 514.0
 margin_right = 300.0
-margin_bottom = 609.0
+margin_bottom = 566.0
+rect_min_size = Vector2( 300, 52 )
+disabled = true
+text = "SCOREBOARD"
+script = ExtResource( 14 )
+
+[node name="button_quit" type="Button" parent="buttons/VBoxContainer"]
+margin_top = 600.0
+margin_right = 300.0
+margin_bottom = 652.0
 rect_min_size = Vector2( 300, 52 )
 text = "QUIT"
 
@@ -184,12 +194,13 @@ margin_top = -30.0
 margin_right = 140.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.2.0a (debug)"
+text = "ver. 1.3.0a (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="achievementMaxActivate" from="." to="." method="_on_menuRoot_achievementMaxActivate" flags=6]
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
+[connection signal="pressed" from="buttons/VBoxContainer/button_scoreboard" to="." method="_on_button_scoreboard_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]

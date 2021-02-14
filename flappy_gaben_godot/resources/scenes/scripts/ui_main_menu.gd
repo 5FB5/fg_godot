@@ -5,7 +5,6 @@ signal achievementMaxActivate()
 func changeSceneToMainGame():
 	Print.line(Print.BLUE, "Game: Change scene to Main.tscn")
 	get_tree().change_scene_to(get_node("/root/GlobalVar").mainscene)
-	Print.line(Print.BLUE, "Game: Main game loop loaded")
 	pass
 
 func _input(event):
@@ -63,6 +62,10 @@ func _on_button_quit_pressed():
 	get_node("/root/GlobalVar").quitSafe()
 	pass
 
+func _on_button_scoreboard_pressed():
+	
+	pass
+
 func _on_button_fullscreen_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
 	
@@ -84,7 +87,7 @@ func _on_button_fullscreen_pressed():
 	pass
 
 func _ready():
-	Print.line(Print.PURPLE, "Game: Main menu loaded")
+	Print.line(Print.YELLOW, "Game: Main menu loaded")
 	if (get_tree().paused):
 		get_tree().paused = false
 		get_node("/root/GlobalVar").playerCanFly = true
@@ -97,3 +100,4 @@ func _ready():
 func _on_menuRoot_achievementMaxActivate():
 	$achievements.emit_signal("showAchievement", 2)
 	pass # Replace with function body.
+

@@ -21,7 +21,7 @@ func _on_button_resume_pressed():
 	pass 
 
 func changeSceneToMainMenu():
-	Print.line(Print.PURPLE, "Game: Change scene to main_menu.tscn")
+	Print.line(Print.BLUE, "Game: Change scene to main_menu.tscn")
 	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
 	pass
 

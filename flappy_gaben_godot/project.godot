@@ -47,7 +47,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "gamejolt_api_v2", "katuiche-colorful-console" )
 
 [filesystem]
 
