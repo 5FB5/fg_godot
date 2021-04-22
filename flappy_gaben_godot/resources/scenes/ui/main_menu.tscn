@@ -65,11 +65,11 @@ position = Vector2( 212.425, 1007.42 )
 texture = ExtResource( 5 )
 
 [node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1161.92, 550 )
+position = Vector2( 1161.92, 592.045 )
 texture = ExtResource( 3 )
 
 [node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1162.92, 725 )
+position = Vector2( 1162.92, 681.273 )
 texture = ExtResource( 4 )
 
 [node name="ps4" type="Control" parent="gamepad_buttons"]
@@ -83,12 +83,12 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1161.92, 550 )
+position = Vector2( 1161.92, 593.727 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 8 )
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1162.92, 725 )
+position = Vector2( 1162.92, 679.592 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 7 )
 
@@ -111,11 +111,11 @@ __meta__ = {
 material = SubResource( 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 64.3073
-margin_top = 250.618
-margin_right = 740.308
-margin_bottom = 385.618
-rect_rotation = 10.7686
+margin_left = 44.7073
+margin_top = 257.745
+margin_right = 720.708
+margin_bottom = 392.745
+rect_rotation = -10.9071
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 text = "splash screen"
@@ -144,13 +144,14 @@ custom_constants/separation = 34
 alignment = 1
 
 [node name="button_start" type="Button" parent="buttons/VBoxContainer"]
-margin_top = 428.0
+margin_top = 471.0
 margin_right = 300.0
-margin_bottom = 480.0
+margin_bottom = 523.0
 rect_min_size = Vector2( 300, 52 )
 text = "START"
 
 [node name="button_scoreboard" type="Button" parent="buttons/VBoxContainer"]
+visible = false
 margin_top = 514.0
 margin_right = 300.0
 margin_bottom = 566.0
@@ -160,9 +161,9 @@ text = "SCOREBOARD"
 script = ExtResource( 14 )
 
 [node name="button_quit" type="Button" parent="buttons/VBoxContainer"]
-margin_top = 600.0
+margin_top = 557.0
 margin_right = 300.0
-margin_bottom = 652.0
+margin_bottom = 609.0
 rect_min_size = Vector2( 300, 52 )
 text = "QUIT"
 
@@ -194,7 +195,7 @@ margin_top = -30.0
 margin_right = 140.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.3.0a (debug)"
+text = "ver. 1.3.1b (debug)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

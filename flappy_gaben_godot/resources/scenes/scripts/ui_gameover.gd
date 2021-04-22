@@ -28,6 +28,7 @@ pass
 func _on_button_restart_pressed():
 	Print.line(Print.GREEN, "-- Game restarted --")
 	visible = false;
+	get_node("/root/GlobalVar").playerLastBestScore = get_node("/root/GlobalVar").playerBestScore
 	get_tree().reload_current_scene()
 	get_node_or_null("/root/GlobalVar").playerCanFly = true;
 	get_node_or_null("/root/GlobalVar").playerScore = 0;
@@ -41,6 +42,11 @@ func _on_button_menu_pressed():
 func _process(_delta):
 	$ui_score/labelScore.text = str(get_node("/root/GlobalVar").playerBestScore)
 	$ui_score/labelCurrentScore.text = str(get_node("/root/GlobalVar").playerScore)
+	
+	if (get_node("/root/GlobalVar").playerBestScore > get_node("/root/GlobalVar").playerLastBestScore):
+		$ui_score/labelNewRecord.show()
+	else:
+		$ui_score/labelNewRecord.hide()
 	
 	# Change UI button icons
 	# If XOne controller

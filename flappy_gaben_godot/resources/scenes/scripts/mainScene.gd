@@ -27,3 +27,4 @@ func _on_player__death_ceiling():
 	get_node("ui_layer/UI/Game Over").visible = true
 	Print.line(Print.YELLOW, "UI: Game Over screen activated")
 	pass
+
