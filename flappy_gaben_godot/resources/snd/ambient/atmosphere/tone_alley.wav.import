@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tone_alley.wav-f09bdd146e74e0828ecc68a0f36b71e3.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/atmosphere/tone_alley.wav"
+dest_files=[ "res://.import/tone_alley.wav-f09bdd146e74e0828ecc68a0f36b71e3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

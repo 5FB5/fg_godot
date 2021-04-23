@@ -1,0 +1,20 @@
+[gd_resource type="ParticlesMaterial" format=2]
+
+[resource]
+emission_shape = 4
+emission_point_count = 1
+flag_disable_z = true
+direction = Vector3( -19.122, 15.317, 0 )
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 107.44
+initial_velocity_random = 0.21
+angular_velocity = -119.01
+angular_velocity_random = 0.18
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+radial_accel = 4.96
+radial_accel_random = 0.24
+angle = -23.8
+scale = 0.55

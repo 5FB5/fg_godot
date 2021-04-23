@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cargo_hold2.wav-69f687a18a5b584a1aae523e5d567b7b.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/atmosphere/cargo_hold2.wav"
+dest_files=[ "res://.import/cargo_hold2.wav-69f687a18a5b584a1aae523e5d567b7b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

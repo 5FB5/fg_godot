@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/scenes/tube/tube.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/scenes/scripts/tubeSpawner.gd" type="Script" id=2]
+[ext_resource path="res://resources/icon.png" type="Texture" id=3]
+
+
+[node name="tubeSpawner" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="tube" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 1856, -1072 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.21
+autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
