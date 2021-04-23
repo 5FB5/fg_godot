@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Stop-a-Gaben.ogg-5c5c938ecba9826ae7a88e1c81ab11be.oggstr"
+
+[deps]
+
+source_file="res://resources/snd/music/Stop-a-Gaben.ogg"
+dest_files=[ "res://.import/Stop-a-Gaben.ogg-5c5c938ecba9826ae7a88e1c81ab11be.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

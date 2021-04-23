@@ -17,14 +17,19 @@ func changeSceneToMainMenu():
 func _input(event):
 		if (visible):
 			if (event.is_action_released("ui_accept")):
+				$sounds/button_release.play()
 				Print.line(Print.GREEN, "-- Game restarted --")
 				visible = false;
 				get_tree().reload_current_scene()
 				get_node_or_null("/root/GlobalVar").playerCanFly = true;
 				get_node_or_null("/root/GlobalVar").playerScore = 0;
-			
 			elif (event.is_action_released("ui_cancel")):
+				$sounds/button_release.play()
 				changeSceneToMainMenu()
+			elif (event.is_action_pressed("ui_accept")):
+				$sounds/button_click.play()
+			elif (event.is_action_pressed("ui_cancel")):
+				$sounds/button_click.play()
 pass
 
 func _on_button_restart_pressed():
@@ -85,5 +90,21 @@ func _on_Control_uiPs4Hide():
 	pass 
 
 func _on_Control_snd_play_record():
-	$snd_record.play()
+	$sounds/snd_record.play()
+	pass
+
+func _on_button_restart_button_up():
+	$sounds/button_release.play()
+	pass
+
+func _on_button_restart_button_down():
+	$sounds/button_click.play()
+	pass
+
+func _on_button_menu_button_up():
+	$sounds/button_release.play()
+	pass
+
+func _on_button_menu_button_down():
+	$sounds/button_click.play()
 	pass

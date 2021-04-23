@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonB.png" type="Texture" id=1]
 [ext_resource path="res://resources/sprites/ui/buttons/gamepad_buttonA.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://resources/fonts/gameover_text.tres" type="DynamicFont" id=6]
 [ext_resource path="res://resources/scenes/scripts/ui_gameover.gd" type="Script" id=7]
 [ext_resource path="res://resources/snd/achievement_earned.wav" type="AudioStream" id=8]
+[ext_resource path="res://resources/snd/buttonrollover.wav" type="AudioStream" id=9]
+[ext_resource path="res://resources/snd/buttonclickrelease.wav" type="AudioStream" id=10]
+[ext_resource path="res://resources/snd/buttonclick.wav" type="AudioStream" id=11]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -196,14 +199,29 @@ margin_bottom = 375.0
 rect_min_size = Vector2( 300, 52 )
 text = "MENU"
 
-[node name="snd_record" type="AudioStreamPlayer" parent="."]
+[node name="sounds" type="Node" parent="."]
+
+[node name="snd_record" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 8 )
 volume_db = -15.0
+
+[node name="button_click" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 11 )
+
+[node name="button_release" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 10 )
+
+[node name="button_roll" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 9 )
 
 [connection signal="snd_play_record" from="." to="." method="_on_Control_snd_play_record" flags=6]
 [connection signal="uiPs4Hide" from="." to="." method="_on_Control_uiPs4Hide"]
 [connection signal="uiPs4Show" from="." to="." method="_on_Control_uiPs4Show"]
 [connection signal="uiXboxHide" from="." to="." method="_on_Control_uiXboxHide"]
 [connection signal="uiXboxShow" from="." to="." method="_on_Control_uiXboxShow"]
+[connection signal="button_down" from="buttons/VBoxContainer/button_restart" to="." method="_on_button_restart_button_down"]
+[connection signal="button_up" from="buttons/VBoxContainer/button_restart" to="." method="_on_button_restart_button_up"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_restart" to="." method="_on_button_restart_pressed" flags=6]
+[connection signal="button_down" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_button_down"]
+[connection signal="button_up" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_button_up"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_menu" to="." method="_on_button_menu_pressed" flags=6]
