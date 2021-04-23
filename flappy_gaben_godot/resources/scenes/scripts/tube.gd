@@ -19,7 +19,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 #If coin trigger collides with player then we increase score
 func _on_Area2D_body_entered(_body):
-	if (_globalVar.playerCanFly == true):	
+	if (_globalVar.playerCanFly == true):
+		$sound_score.play()
 		_globalVar.playerScore = _globalVar.playerScore + 1	
 		print("Game: Player score = ", _globalVar.playerScore)
 	pass

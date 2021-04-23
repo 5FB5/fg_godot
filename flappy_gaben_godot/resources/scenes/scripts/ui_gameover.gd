@@ -2,6 +2,8 @@ extends Control
 
 onready var _globalVar = get_node_or_null("/root/GlobalVar")
 
+signal snd_play_record
+
 signal uiXboxShow()
 signal uiPs4Show()
 signal uiXboxHide()
@@ -44,6 +46,7 @@ func _process(_delta):
 	$ui_score/labelCurrentScore.text = str(get_node("/root/GlobalVar").playerScore)
 	
 	if (get_node("/root/GlobalVar").playerBestScore > get_node("/root/GlobalVar").playerLastBestScore):
+		emit_signal("snd_play_record")
 		$ui_score/labelNewRecord.show()
 	else:
 		$ui_score/labelNewRecord.hide()
@@ -80,3 +83,7 @@ func _on_Control_uiXboxHide():
 func _on_Control_uiPs4Hide():
 	$buttons/gamepad_buttons/ps4.visible = false
 	pass 
+
+func _on_Control_snd_play_record():
+	$snd_record.play()
+	pass

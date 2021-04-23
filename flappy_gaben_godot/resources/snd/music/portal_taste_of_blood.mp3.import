@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/portal_taste_of_blood.mp3-e78febaeb65cc98be73120959853d381.mp3str"
+
+[deps]
+
+source_file="res://resources/snd/music/portal_taste_of_blood.mp3"
+dest_files=[ "res://.import/portal_taste_of_blood.mp3-e78febaeb65cc98be73120959853d381.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

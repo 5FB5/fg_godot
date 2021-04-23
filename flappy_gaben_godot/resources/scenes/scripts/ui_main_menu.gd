@@ -34,9 +34,21 @@ func _input(event):
 #		pass
 	
 	# If user press any accept button, we go to play
+	if (event.is_action_pressed("ui_accept")):
+		$snd_buttons/button_click.play()
+	elif (event.is_action_pressed("ui_cancel")):
+		$snd_buttons/button_click.play()
+		
+	if (event.is_action_pressed("window_fullscreen")):
+		$snd_buttons/button_click.play()
+	elif(event.is_action_released("window_fullscreen")):
+		$snd_buttons/button_release.play()
+	
 	if (event.is_action_released("ui_accept")):
+		$snd_buttons/button_release.play()
 		changeSceneToMainGame()
 	elif (event.is_action_released("ui_cancel")):
+		$snd_buttons/button_release.play()
 		get_node("/root/GlobalVar").quitSafe()
 		
 	# Change UI button icons
@@ -103,3 +115,38 @@ func _on_menuRoot_achievementMaxActivate():
 	#$achievements.emit_signal("showAchievement", 2)
 	pass # Replace with function body.
 
+func _on_button_start_mouse_entered():
+	$snd_buttons/button_rollover.play()
+	pass
+
+func _on_button_quit_mouse_entered():
+	$snd_buttons/button_rollover.play()
+	pass
+
+func _on_button_fullscreen_mouse_entered():
+	$snd_buttons/button_rollover.play()
+	pass
+
+func _on_button_fullscreen_button_up():
+	$snd_buttons/button_release.play()
+	pass
+
+func _on_button_fullscreen_button_down():
+	$snd_buttons/button_click.play()
+	pass
+
+func _on_button_start_button_down():
+	$snd_buttons/button_click.play()
+	pass
+
+func _on_button_quit_button_down():
+	$snd_buttons/button_click.play()
+	pass
+
+func _on_button_start_button_up():
+	$snd_buttons/button_release.play()
+	pass
+
+func _on_button_quit_button_up():
+	$snd_buttons/button_release.play()
+	pass

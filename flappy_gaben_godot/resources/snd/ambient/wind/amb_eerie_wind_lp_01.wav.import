@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/amb_eerie_wind_lp_01.wav-400680b3d181357f7f5495de09b7599d.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/wind/amb_eerie_wind_lp_01.wav"
+dest_files=[ "res://.import/amb_eerie_wind_lp_01.wav-400680b3d181357f7f5495de09b7599d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

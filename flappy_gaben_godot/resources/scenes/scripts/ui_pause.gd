@@ -6,6 +6,7 @@ func _input(event):
 	#Turn on pause menu if player has not lost
 	if (_globalVar.playerCanFly == true):
 		if (event.is_action_released("game_pause")):
+			$sounds/button_click.play()
 			get_tree().paused = not get_tree().paused
 			visible = not visible
 		
@@ -33,6 +34,7 @@ func _on_button_menu_pressed():
 func _process(_delta):
 	if (visible):
 		if (Input.is_action_just_released("ui_cancel")):
+			$sounds/button_release.play()
 			changeSceneToMainMenu()
 		
 		# Change UI button icons
@@ -50,4 +52,20 @@ func _process(_delta):
 			# Hide all gamepad's icons
 			$gamepad_buttons/xbox.visible = false
 			$gamepad_buttons/ps4.visible = false
+	pass
+
+func _on_button_resume_button_down():
+	$sounds/button_click.play()
+	pass
+
+func _on_button_menu_button_down():
+	$sounds/button_click.play()
+	pass
+
+func _on_button_resume_button_up():
+	$sounds/button_release.play()
+	pass
+
+func _on_button_menu_button_up():
+	$sounds/button_release.play()
 	pass

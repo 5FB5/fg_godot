@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/What Kind Of Hospital Is This.mp3-27f32f73d2be43d1f1b2c6a9fb215f85.mp3str"
+
+[deps]
+
+source_file="res://resources/snd/music/What Kind Of Hospital Is This.mp3"
+dest_files=[ "res://.import/What Kind Of Hospital Is This.mp3-27f32f73d2be43d1f1b2c6a9fb215f85.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

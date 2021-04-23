@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/achievement.mp3-f272bbd9c6df2ea55a43734db482c992.mp3str"
+
+[deps]
+
+source_file="res://resources/snd/music/achievement.mp3"
+dest_files=[ "res://.import/achievement.mp3-f272bbd9c6df2ea55a43734db482c992.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

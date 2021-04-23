@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/xmas.mp3-0323e2f43bfde433062f88c8bb51dedc.mp3str"
+
+[deps]
+
+source_file="res://resources/snd/music/xmas.mp3"
+dest_files=[ "res://.import/xmas.mp3-0323e2f43bfde433062f88c8bb51dedc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

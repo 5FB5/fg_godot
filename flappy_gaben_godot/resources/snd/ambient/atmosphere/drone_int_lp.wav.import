@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drone_int_lp.wav-74c7518acedb6ee5684a39c6cdeed5c1.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/atmosphere/drone_int_lp.wav"
+dest_files=[ "res://.import/drone_int_lp.wav-74c7518acedb6ee5684a39c6cdeed5c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

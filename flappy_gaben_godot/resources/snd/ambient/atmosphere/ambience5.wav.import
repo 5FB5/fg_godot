@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ambience5.wav-f40a40829f71dd53a00536ae74986d2e.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/atmosphere/ambience5.wav"
+dest_files=[ "res://.import/ambience5.wav-f40a40829f71dd53a00536ae74986d2e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
