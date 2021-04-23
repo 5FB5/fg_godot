@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/quiet_cellblock_amb.wav-0eda03f96b40a9ff456b8951fa860e8e.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/atmosphere/quiet_cellblock_amb.wav"
+dest_files=[ "res://.import/quiet_cellblock_amb.wav-0eda03f96b40a9ff456b8951fa860e8e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

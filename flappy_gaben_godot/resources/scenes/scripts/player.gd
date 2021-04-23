@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+signal snd_collision_tube_play
 signal _death
 signal _death_ceiling
 
@@ -17,12 +18,12 @@ func saveBestScore(_value):
 	fileBestScoreSave.store_32(int(_value))
 	fileBestScoreSave.close()
 	
-	print("Code: saveBestScore()")
+	Print.line(Print.YELLOW, "Code: saveBestScore()")
 	pass
 
 #Signal for death function for once activation
 func _on_player__death():
-	print("-- Player Death --")
+	Print.line(Print.GREEN, "-- Player Death --")
 	_globalVars.playerCanFly = false
 	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
 	
@@ -31,15 +32,14 @@ func _on_player__death():
 		_globalVars.playerBestScore = _globalVars.playerScore
 		saveBestScore(_globalVars.playerBestScore) #Save progress
 	
-	queue_free()##self.hide()
-	print("Code: Player.queue_free()")
+	queue_free()
+	Print.line(Print.YELLOW, "Code: Player.queue_free()")
 	print("Game: Best score = ", _globalVars.playerBestScore, ". Game over!")
-	print("-- END Player Death --")
+	Print.line(Print.GREEN, "-- END Player Death --")
 	pass
 
 func _on_player__death_ceiling():
-	print("-- Player Death (ceiling) --")
-	
+	Print.line(Print.GREEN, "-- Player Death (ceiling) --")
 	_globalVars.playerCanFly = false
 	print("Code: _globalVar.canFly = ", _globalVars.playerCanFly)
 	
@@ -51,12 +51,13 @@ func _on_player__death_ceiling():
 	if ((position.y > _globalVars.screenSize.y + 600)):
 		queue_free()#self.hide()
 		
-	print("Code: Player.queue_free()")
-	print("-- END Player Death --")
+	Print.line(Print.YELLOW, "Code: Player.queue_free()")
+	Print.line(Print.GREEN, "-- END Player Death --")
 	pass
 
 #Death function if player collides with tube	
 func death_tubeCollision():
+	emit_signal("snd_collision_tube_play")
 	linear_velocity.y += 50
 	$Sprite.rotation_degrees += 10
 	
@@ -74,6 +75,7 @@ func death_ceilingCollision():
 #Player jumping function
 func jump(_delta):
 	if (_globalVars.playerCanFly):
+		$sounds/snd_swing.play()
 		linear_velocity.y -= jumpForce * _delta + Engine.get_physics_interpolation_fraction()
 		$Sprite.rotation_degrees = -3
 	pass
@@ -95,7 +97,7 @@ func _input(_event):
 func _ready():
 	# Set basic position
 	position = Vector2(184, 200)
-	print("Code: Player spawned")
+	Print.line(Print.YELLOW, "Code: Player spawned")
 	pass
 
 # Main function
@@ -115,4 +117,8 @@ func _process(delta):
 				
 	else: #Main death function if canFly is false
 		death_tubeCollision()
+	pass
+
+func _on_player_snd_collision_tube_play():
+	$sounds/snd_hit.play()
 	pass

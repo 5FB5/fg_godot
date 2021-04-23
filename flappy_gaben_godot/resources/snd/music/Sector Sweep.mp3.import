@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sector Sweep.mp3-b209dcb6c223081860976ffa24cbfc89.mp3str"
+
+[deps]
+
+source_file="res://resources/snd/music/Sector Sweep.mp3"
+dest_files=[ "res://.import/Sector Sweep.mp3-b209dcb6c223081860976ffa24cbfc89.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

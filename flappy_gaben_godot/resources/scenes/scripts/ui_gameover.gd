@@ -2,27 +2,40 @@ extends Control
 
 onready var _globalVar = get_node_or_null("/root/GlobalVar")
 
+signal snd_play_record
+
 signal uiXboxShow()
 signal uiPs4Show()
 signal uiXboxHide()
 signal uiPs4Hide()
 
+func changeSceneToMainMenu():
+	Print.line(Print.PURPLE, "Game: Change scene to main_menu.tscn")
+	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+	pass
+
 func _input(event):
 		if (visible):
 			if (event.is_action_released("ui_accept")):
-				print("-- Game restarted --")
+				$sounds/button_release.play()
+				Print.line(Print.GREEN, "-- Game restarted --")
 				visible = false;
 				get_tree().reload_current_scene()
 				get_node_or_null("/root/GlobalVar").playerCanFly = true;
 				get_node_or_null("/root/GlobalVar").playerScore = 0;
-			
 			elif (event.is_action_released("ui_cancel")):
-				get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+				$sounds/button_release.play()
+				changeSceneToMainMenu()
+			elif (event.is_action_pressed("ui_accept")):
+				$sounds/button_click.play()
+			elif (event.is_action_pressed("ui_cancel")):
+				$sounds/button_click.play()
 pass
 
 func _on_button_restart_pressed():
-	print("-- Game restarted --")
+	Print.line(Print.GREEN, "-- Game restarted --")
 	visible = false;
+	get_node("/root/GlobalVar").playerLastBestScore = get_node("/root/GlobalVar").playerBestScore
 	get_tree().reload_current_scene()
 	get_node_or_null("/root/GlobalVar").playerCanFly = true;
 	get_node_or_null("/root/GlobalVar").playerScore = 0;
@@ -30,12 +43,18 @@ func _on_button_restart_pressed():
 
 func _on_button_menu_pressed():
 	visible = false
-	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+	changeSceneToMainMenu()
 	pass
 
 func _process(_delta):
 	$ui_score/labelScore.text = str(get_node("/root/GlobalVar").playerBestScore)
 	$ui_score/labelCurrentScore.text = str(get_node("/root/GlobalVar").playerScore)
+	
+	if (get_node("/root/GlobalVar").playerBestScore > get_node("/root/GlobalVar").playerLastBestScore):
+		emit_signal("snd_play_record")
+		$ui_score/labelNewRecord.show()
+	else:
+		$ui_score/labelNewRecord.hide()
 	
 	# Change UI button icons
 	# If XOne controller
@@ -52,7 +71,6 @@ func _process(_delta):
 		# Hide all gamepad's icons
 		emit_signal("uiXboxHide")
 		emit_signal("uiPs4Hide")
-	
 	pass
 
 func _on_Control_uiXboxShow():
@@ -70,3 +88,23 @@ func _on_Control_uiXboxHide():
 func _on_Control_uiPs4Hide():
 	$buttons/gamepad_buttons/ps4.visible = false
 	pass 
+
+func _on_Control_snd_play_record():
+	$sounds/snd_record.play()
+	pass
+
+func _on_button_restart_button_up():
+	$sounds/button_release.play()
+	pass
+
+func _on_button_restart_button_down():
+	$sounds/button_click.play()
+	pass
+
+func _on_button_menu_button_up():
+	$sounds/button_release.play()
+	pass
+
+func _on_button_menu_button_down():
+	$sounds/button_click.play()
+	pass

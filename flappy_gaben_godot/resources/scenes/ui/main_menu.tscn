@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://resources/fonts/fg_title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://resources/scenes/scripts/ui_main_menu.gd" type="Script" id=2]
@@ -13,6 +13,14 @@
 [ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
 [ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
 [ext_resource path="res://resources/achievements/resources/game_ui/ui_achievements_main.tscn" type="PackedScene" id=13]
+[ext_resource path="res://resources/scenes/ui/button_scoreboard.gd" type="Script" id=14]
+[ext_resource path="res://resources/snd/shop.wav" type="AudioStream" id=15]
+[ext_resource path="res://resources/snd/ambient/atmosphere/ambience_base.wav" type="AudioStream" id=16]
+[ext_resource path="res://resources/snd/ambient/atmosphere/drone2lp.wav" type="AudioStream" id=17]
+[ext_resource path="res://resources/snd/ambient/wind/underground_wind_lp_01.wav" type="AudioStream" id=18]
+[ext_resource path="res://resources/snd/buttonclick.wav" type="AudioStream" id=19]
+[ext_resource path="res://resources/snd/buttonrollover.wav" type="AudioStream" id=20]
+[ext_resource path="res://resources/snd/buttonclickrelease.wav" type="AudioStream" id=21]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
@@ -43,7 +51,9 @@ __meta__ = {
 [node name="gamepad_buttons" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.5874
 margin_top = 1.5874
+margin_right = 1.5874
 margin_bottom = 1.5874
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,11 +72,11 @@ position = Vector2( 212.425, 1007.42 )
 texture = ExtResource( 5 )
 
 [node name="xbox_buttonA" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1161.92, 595.861 )
+position = Vector2( 1161.92, 592.045 )
 texture = ExtResource( 3 )
 
 [node name="xbox_buttonB" type="Sprite" parent="gamepad_buttons/xbox"]
-position = Vector2( 1162.92, 682.618 )
+position = Vector2( 1162.92, 681.273 )
 texture = ExtResource( 4 )
 
 [node name="ps4" type="Control" parent="gamepad_buttons"]
@@ -80,12 +90,12 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
 [node name="ps4_buttonA" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1161.92, 596.111 )
+position = Vector2( 1161.92, 593.727 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 8 )
 
 [node name="ps4_buttonB" type="Sprite" parent="gamepad_buttons/ps4"]
-position = Vector2( 1162.92, 683.553 )
+position = Vector2( 1162.92, 679.592 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 7 )
 
@@ -108,11 +118,11 @@ __meta__ = {
 material = SubResource( 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 31.5297
-margin_top = 255.679
-margin_right = 707.53
-margin_bottom = 390.679
-rect_rotation = -12.0
+margin_left = 44.7073
+margin_top = 257.745
+margin_right = 720.708
+margin_bottom = 392.745
+rect_rotation = -10.9071
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 text = "splash screen"
@@ -146,6 +156,16 @@ margin_right = 300.0
 margin_bottom = 523.0
 rect_min_size = Vector2( 300, 52 )
 text = "START"
+
+[node name="button_scoreboard" type="Button" parent="buttons/VBoxContainer"]
+visible = false
+margin_top = 514.0
+margin_right = 300.0
+margin_bottom = 566.0
+rect_min_size = Vector2( 300, 52 )
+disabled = true
+text = "SCOREBOARD"
+script = ExtResource( 14 )
 
 [node name="button_quit" type="Button" parent="buttons/VBoxContainer"]
 margin_top = 557.0
@@ -182,11 +202,61 @@ margin_top = -30.0
 margin_right = 140.0
 margin_bottom = -16.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "ver. 1.2.0a (debug)"
+text = "ver. 1.3.1r (release)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="snd_music" type="Node" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="snd_music"]
+stream = ExtResource( 15 )
+volume_db = -11.604
+autoplay = true
+bus = "music"
+
+[node name="ambient" type="AudioStreamPlayer" parent="snd_music"]
+volume_db = -4.952
+autoplay = true
+
+[node name="ambient_base" type="AudioStreamPlayer" parent="snd_music/ambient"]
+stream = ExtResource( 16 )
+volume_db = -9.079
+autoplay = true
+
+[node name="drone2lp" type="AudioStreamPlayer" parent="snd_music/ambient"]
+stream = ExtResource( 17 )
+volume_db = -10.73
+autoplay = true
+
+[node name="underground_wind" type="AudioStreamPlayer" parent="snd_music/ambient"]
+stream = ExtResource( 18 )
+volume_db = -7.429
+autoplay = true
+
+[node name="snd_buttons" type="Node" parent="."]
+
+[node name="button_click" type="AudioStreamPlayer" parent="snd_buttons"]
+stream = ExtResource( 19 )
+
+[node name="button_release" type="AudioStreamPlayer" parent="snd_buttons"]
+stream = ExtResource( 21 )
+
+[node name="button_rollover" type="AudioStreamPlayer" parent="snd_buttons"]
+stream = ExtResource( 20 )
+volume_db = -5.0
+
 [connection signal="achievementMaxActivate" from="." to="." method="_on_menuRoot_achievementMaxActivate" flags=6]
+[connection signal="button_down" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_button_down"]
+[connection signal="button_up" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_button_up"]
+[connection signal="mouse_entered" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_mouse_entered"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_pressed" flags=6]
+[connection signal="pressed" from="buttons/VBoxContainer/button_scoreboard" to="." method="_on_button_scoreboard_pressed"]
+[connection signal="button_down" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_button_down"]
+[connection signal="button_up" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_button_up"]
+[connection signal="mouse_entered" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_mouse_entered"]
 [connection signal="pressed" from="buttons/VBoxContainer/button_quit" to="." method="_on_button_quit_pressed" flags=6]
+[connection signal="button_down" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_button_down"]
+[connection signal="button_up" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_button_up"]
+[connection signal="mouse_entered" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_mouse_entered"]
 [connection signal="pressed" from="checkboxes/VBoxContainer/button_fullscreen" to="." method="_on_button_fullscreen_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fnaf.wav-78fcf892b77da8ff63e6a36223febaea.sample"
+
+[deps]
+
+source_file="res://resources/snd/fnaf.wav"
+dest_files=[ "res://.import/fnaf.wav-78fcf892b77da8ff63e6a36223febaea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

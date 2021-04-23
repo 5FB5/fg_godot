@@ -14,12 +14,13 @@ func _process(delta):
 #If tube exited screen then just delete
 func _on_VisibilityNotifier2D_screen_exited():
 	self.queue_free()
-	print ("Game: Tube deleted")
+	Print.line(Print.PURPLE, "Game: Tube deleted")
 	pass
 
 #If coin trigger collides with player then we increase score
 func _on_Area2D_body_entered(_body):
-	if (_globalVar.playerCanFly == true):	
+	if (_globalVar.playerCanFly == true):
+		$sound_score.play()
 		_globalVar.playerScore = _globalVar.playerScore + 1	
 		print("Game: Player score = ", _globalVar.playerScore)
 	pass
@@ -27,5 +28,5 @@ func _on_Area2D_body_entered(_body):
 #If tube collides with player then we set player canFly var to false (defeat)
 func _on_RigidBody2D_body_entered(_body):
 	_globalVar.playerCanFly = false
-	print("Game: Player collides with tube")
+	Print.line(Print.CYAN, "Game: Player collides with tube")
 	pass

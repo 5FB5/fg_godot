@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Path of Borealis.mp3-c00d3ef0dc2d40b352cfd636fc97bc34.mp3str"
+
+[deps]
+
+source_file="res://resources/snd/music/Path of Borealis.mp3"
+dest_files=[ "res://.import/Path of Borealis.mp3-c00d3ef0dc2d40b352cfd636fc97bc34.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

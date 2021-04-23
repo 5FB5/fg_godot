@@ -6,13 +6,14 @@ func _input(event):
 	#Turn on pause menu if player has not lost
 	if (_globalVar.playerCanFly == true):
 		if (event.is_action_released("game_pause")):
+			$sounds/button_click.play()
 			get_tree().paused = not get_tree().paused
 			visible = not visible
 		
 			if (visible):
-				print("Game: Paused")
+				Print.line(Print.PURPLE, "Game: Paused")
 			else:
-				print("Game: Resumed")
+				Print.line(Print.PURPLE, "Game: Resumed")
 	pass
 
 func _on_button_resume_pressed():
@@ -20,15 +21,21 @@ func _on_button_resume_pressed():
 	visible = not visible
 	pass 
 
-func _on_button_menu_pressed():
+func changeSceneToMainMenu():
+	Print.line(Print.BLUE, "Game: Change scene to main_menu.tscn")
 	get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+	pass
+
+func _on_button_menu_pressed():
+	changeSceneToMainMenu()
 	pass
 
 # IDK why but it fixes problem with returning to main menu via gamepad
 func _process(_delta):
 	if (visible):
 		if (Input.is_action_just_released("ui_cancel")):
-			get_tree().change_scene("res://resources/scenes/ui/main_menu.tscn")
+			$sounds/button_release.play()
+			changeSceneToMainMenu()
 		
 		# Change UI button icons
 		# If XOne controller
@@ -45,4 +52,20 @@ func _process(_delta):
 			# Hide all gamepad's icons
 			$gamepad_buttons/xbox.visible = false
 			$gamepad_buttons/ps4.visible = false
+	pass
+
+func _on_button_resume_button_down():
+	$sounds/button_click.play()
+	pass
+
+func _on_button_menu_button_down():
+	$sounds/button_click.play()
+	pass
+
+func _on_button_resume_button_up():
+	$sounds/button_release.play()
+	pass
+
+func _on_button_menu_button_up():
+	$sounds/button_release.play()
 	pass

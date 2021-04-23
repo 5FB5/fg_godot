@@ -18,5 +18,5 @@ func spawnTube():
 #Timer function that activate spawnTube() func at a specific time
 func _on_Timer_timeout():
 	spawnTube()
-	print ("Game: New tube spawned")
+	Print.line(Print.PURPLE, "Game: New tube spawned")
 	pass

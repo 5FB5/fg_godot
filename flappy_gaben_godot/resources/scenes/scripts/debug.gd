@@ -1,5 +1,5 @@
 extends Node
 
 func _ready():
-	print("-- Game started -- ")
+	Print.line(Print.GREEN, "-- Game started -- ")
 	pass

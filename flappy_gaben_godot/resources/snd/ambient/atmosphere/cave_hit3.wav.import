@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cave_hit3.wav-7c873d3efaac15fd60792c0cfbc007e9.sample"
+
+[deps]
+
+source_file="res://resources/snd/ambient/atmosphere/cave_hit3.wav"
+dest_files=[ "res://.import/cave_hit3.wav-7c873d3efaac15fd60792c0cfbc007e9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
