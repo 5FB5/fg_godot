@@ -22,7 +22,8 @@ _global_script_class_icons={
 
 config/name="flappy_gaben"
 run/main_scene="res://resources/scenes/ui/main_menu.tscn"
-config/icon="res://resources/icon.png"
+config/icon="res://resources/favicon_update-1.png"
+config/windows_native_icon="res://resources/favicon_update.ico"
 
 [autoload]
 

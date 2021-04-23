@@ -11,7 +11,7 @@ func playRandomSong():
 	var audiostream = load('res://resources/snd/music/' + tracks[ran] + '.ogg')
 	
 	self.stream = audiostream
-	
+	Print.line(Print.YELLOW, "Game: [Music] Now playing: " + str(tracks[ran]))
 	play()
 	pass
 
