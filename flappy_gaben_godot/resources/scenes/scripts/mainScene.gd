@@ -29,25 +29,3 @@ func _on_player__death_ceiling():
 	get_node("ui_layer/UI/Game Over").visible = true
 	Print.line(Print.YELLOW, "UI: Game Over screen activated")
 	pass
-
-func setRandomMusic(a:Array):
-	a.shuffle()
-	
-	$AudioStreamPlayer.stream = arrayMusic.front()
-	$AudioStreamPlayer.play()
-	pass
-
-func _ready():
-	randomize()
-	
-	arrayMusic.append(preload("res://resources/snd/music/Stop-a-Gaben.ogg"))
-	#arrayMusic.append(preload("res://resources/snd/music/Gaben-Song.ogg"))
-	arrayMusic.append(preload("res://resources/snd/music/track1.ogg"))
-#
-#	$AudioStreamPlayer.stream = arrayMusic.front()
-#	$AudioStreamPlayer.play()
-	pass
-
-func _on_music_finished():
-	setRandomMusic(arrayMusic)
-	pass

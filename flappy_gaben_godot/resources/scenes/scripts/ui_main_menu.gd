@@ -34,6 +34,7 @@ func _input(event):
 #		pass
 	
 	# If user press any accept button, we go to play
+
 	if (event.is_action_pressed("ui_accept")):
 		$snd_buttons/button_click.play()
 	elif (event.is_action_pressed("ui_cancel")):
@@ -74,10 +75,6 @@ func _on_button_start_pressed():
 
 func _on_button_quit_pressed():
 	get_node("/root/GlobalVar").quitSafe()
-	pass
-
-func _on_button_scoreboard_pressed():
-	
 	pass
 
 func _on_button_fullscreen_pressed():
@@ -149,4 +146,8 @@ func _on_button_start_button_up():
 
 func _on_button_quit_button_up():
 	$snd_buttons/button_release.play()
+	pass
+
+func _on_button_settings_pressed():
+		
 	pass
