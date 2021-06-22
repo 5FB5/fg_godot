@@ -1,0 +1,3 @@
+[submodule "flappy_gaben_godot/resources/achievements"]
+	path = flappy_gaben_godot/resources/achievements
+	url = https://github.com/5fb5/gd-achievements
