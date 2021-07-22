@@ -1,0 +1,44 @@
+{
+    "20 Tubes!": {
+        "description": "Go through 20 tubes",
+        "is_secret": 0,
+        "progress": 20,
+        "icon_path": "res://resources/sprites/achievements/spr_achiev20tubes.png",
+        "is_have": 0
+    },
+    "50 Tubes!": {
+        "description": "Go through 50 tubes",
+        "is_secret": 0,
+        "progress": 50,
+        "icon_path": "res://resources/sprites/achievements/spr_achiev50tubes_0.png",
+        "is_have": 0
+    },
+    "Do you have a girlfriend, man?": {
+        "description": "Go through 100 tubes",
+        "is_secret": 0,
+        "progress": 100,
+        "icon_path": "res://resources/sprites/achievements/spr_achiev100Money_0.png",
+        "is_have": 0
+    },
+    "Cheater!": {
+        "description": "How did you get 500 tubes?",
+        "is_secret": 0,
+        "progress": 500,
+        "icon_path": "res://resources/sprites/achievements/spr_achiev500Money_0.png",
+        "is_have": 0
+    },
+    "Yep, you are cheater...": {
+        "description": "I think it's obvious",
+        "is_secret": 0,
+        "progress": 1000,
+        "icon_path": "res://resources/sprites/achievements/spr_achiev1000Money_0.png",
+        "is_have": 0
+    },
+    "Become MAX!": {
+        "description": "Enter M, A, X keyboard combination",
+        "is_secret": 1,
+        "progress": 0,
+        "icon_path": "res://resources/sprites/achievements/spr_achiev_maks_0.png",
+        "is_have": 0
+    }
+}

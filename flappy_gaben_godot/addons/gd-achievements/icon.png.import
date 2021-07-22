@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_achiev20tubes.png-a3c4c8523acb07613f0279f4b6ee0c99.stex"
+path="res://.import/icon.png-86acdeec5ebca9621a5f25dcf49d9be2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/achievements/resources/icons/spr_achiev20tubes.png"
-dest_files=[ "res://.import/spr_achiev20tubes.png-a3c4c8523acb07613f0279f4b6ee0c99.stex" ]
+source_file="res://addons/gd-achievements/icon.png"
+dest_files=[ "res://.import/icon.png-86acdeec5ebca9621a5f25dcf49d9be2.stex" ]
 
 [params]
 

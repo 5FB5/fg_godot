@@ -1,7 +1,5 @@
 extends Control
 
-signal achievementMaxActivate()
-
 func changeSceneToMainGame():
 	Print.line(Print.BLUE, "Game: Change scene to Main.tscn")
 	get_tree().change_scene_to(get_node("/root/GlobalVar").mainscene)
@@ -9,29 +7,9 @@ func changeSceneToMainGame():
 
 func _input(event):
 	# Activate MAX achievement
-	# FIXME: json file doesn't updated in build's package
-#
-#	if (get_node("/root/GlobalVar").isFileJsonExists == true):
-#		if (Input.is_key_pressed(KEY_M) and Input.is_key_pressed(KEY_A) and Input.is_key_pressed(KEY_X) and ($"/root/GlobalVar").achievementMax == 0):
-#				emit_signal("achievementMaxActivate")
-#
-#				# Read data to write new
-#				var filetmp = File.new()
-#				filetmp.open("res://resources/achievements/data/achievements.json", File.READ)
-#				var tmpdata = parse_json(filetmp.get_as_text())
-#				filetmp.close()
-#
-#				tmpdata.values()[2]['is_have'] = 1
-#				get_node("/root/GlobalVar").achievementMax = 1
-#
-#				# Write data to write
-#				filetmp = File.new()
-#				filetmp.open("res://resources/achievements/data/achievements.json", File.WRITE)
-#				filetmp.store_string(JSON.print(tmpdata, " ", true))
-#				filetmp.close()	
-#
-#				pass
-#		pass
+	if (Input.is_key_pressed(KEY_M) and Input.is_key_pressed(KEY_A) and Input.is_key_pressed(KEY_X)):
+		$AchievementSystem.emit_signal("showAchievement", 2)
+		pass
 	
 	# If user press any accept button, we go to play
 	if (event.is_action_pressed("ui_accept")):
@@ -101,6 +79,9 @@ func _on_button_fullscreen_pressed():
 	pass
 
 func _ready():
+	# TODO: DELETE THIS BEFORE RELEASE
+	$AchievementSystem.resetAchievementNotifications()
+	
 	Print.line(Print.YELLOW, "Game: Main menu loaded")
 	if (get_tree().paused):
 		get_tree().paused = false
@@ -111,9 +92,6 @@ func _ready():
 	pass
 
 
-func _on_menuRoot_achievementMaxActivate():
-	#$achievements.emit_signal("showAchievement", 2)
-	pass # Replace with function body.
 
 func _on_button_start_mouse_entered():
 	$snd_buttons/button_rollover.play()

@@ -12,7 +12,6 @@
 [ext_resource path="res://resources/fonts/title_texts.tres" type="DynamicFont" id=10]
 [ext_resource path="res://resources/scenes/ui/labelJokes.gd" type="Script" id=11]
 [ext_resource path="res://resources/scenes/ui/splash_animation.shader" type="Shader" id=12]
-[ext_resource path="res://resources/achievements/resources/game_ui/ui_achievements_main.tscn" type="PackedScene" id=13]
 [ext_resource path="res://resources/scenes/ui/button_scoreboard.gd" type="Script" id=14]
 [ext_resource path="res://resources/snd/shop.wav" type="AudioStream" id=15]
 [ext_resource path="res://resources/snd/ambient/atmosphere/ambience_base.wav" type="AudioStream" id=16]
@@ -21,6 +20,7 @@
 [ext_resource path="res://resources/snd/buttonclick.wav" type="AudioStream" id=19]
 [ext_resource path="res://resources/snd/buttonrollover.wav" type="AudioStream" id=20]
 [ext_resource path="res://resources/snd/buttonclickrelease.wav" type="AudioStream" id=21]
+[ext_resource path="res://addons/gd-achievements/scripts/achievement_manager.gd" type="Script" id=22]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
@@ -32,8 +32,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="achievements" parent="." instance=ExtResource( 13 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -207,6 +205,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AchievementSystem" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="snd_music" type="Node" parent="."]
 
 [node name="music" type="AudioStreamPlayer" parent="snd_music"]
@@ -246,7 +252,6 @@ stream = ExtResource( 21 )
 stream = ExtResource( 20 )
 volume_db = -5.0
 
-[connection signal="achievementMaxActivate" from="." to="." method="_on_menuRoot_achievementMaxActivate" flags=6]
 [connection signal="button_down" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_button_down"]
 [connection signal="button_up" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_button_up"]
 [connection signal="mouse_entered" from="buttons/VBoxContainer/button_start" to="." method="_on_button_start_mouse_entered"]

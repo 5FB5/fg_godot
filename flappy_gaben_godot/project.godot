@@ -30,6 +30,7 @@ config/windows_native_icon="res://resources/favicon_update.ico"
 MainGameVars="*res://resources/scenes/scripts/mainScene.gd"
 GlobalVar="*res://resources/scenes/scripts/global_var.gd"
 Debug="*res://resources/scenes/scripts/debug.gd"
+Global="*res://addons/gd-achievements/scripts/global.gd"
 
 [debug]
 
@@ -48,7 +49,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "gamejolt_api_v2", "katuiche-colorful-console" )
+enabled=PoolStringArray( "res://addons/gamejolt_api_v2/plugin.cfg", "res://addons/gd-achievements/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg" )
 
 [filesystem]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/scenes/scripts/ui.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/fg_score_main.tres" type="DynamicFont" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://resources/sprites/ui/buttons/ps4_buttonOptions.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/ui/buttons/xbox_buttonStart.png" type="Texture" id=7]
 [ext_resource path="res://resources/fonts/debug_text.tres" type="DynamicFont" id=8]
-[ext_resource path="res://resources/achievements/resources/game_ui/ui_achievements_main.tscn" type="PackedScene" id=9]
 
 [node name="UI" type="Control"]
 pause_mode = 2
@@ -106,6 +105,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="achievements" parent="." instance=ExtResource( 9 )]
 [connection signal="achievement20TubesShow" from="." to="." method="_on_UI_achievement20TubesShow" flags=6]
 [connection signal="achievement50TubesShow" from="." to="." method="_on_UI_achievement50TubesShow" flags=6]
